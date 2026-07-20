@@ -27,21 +27,21 @@ not benchmarking them.
 <!-- GAME-JOURNAL:START -->
 ## The journal so far
 
-**Games tested:** 13
+**Games tested:** 14
 
 🍇 **Lost Track of Time:** 6  
 ☕ **Just One More Run:** 3  
-🎒 **Worth Packing:** 0  
+🎒 **Worth Packing:** 1  
 🛠 **Needs Tinkering:** 1  
 🚧 **Leave at Home:** 3
 
 ## Recently tested
 
+- 🎒 [**Zeepkist**](games/zeepkist.md) · Worth Packing · July 2026
 - 🍇 [**Everhood**](games/everhood.md) · Lost Track of Time · July 2026
 - 🚧 [**Final Fantasy XIII**](games/final-fantasy-xiii.md) · Leave at Home · July 2026
 - ☕ [**Ghosts 'n Goblins Resurrection**](games/ghost-n-goblins-resurrection.md) · Just One More Run · July 2026
 - 🍇 [**Date Everything!**](games/date-everything.md) · Lost Track of Time · July 2026
-- 🛠 [**Dragon Quest XI S: Echoes of an Elusive Age**](games/dragon-quest-xi-s.md) · Needs Tinkering · July 2026
 
 *This section is updated automatically whenever the journal changes.*
 <!-- GAME-JOURNAL:END -->
