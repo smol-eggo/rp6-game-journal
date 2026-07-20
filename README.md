@@ -27,9 +27,9 @@ not benchmarking them.
 <!-- GAME-JOURNAL:START -->
 ## The journal so far
 
-**Games tested:** 6
+**Games tested:** 7
 
-🍇 **Lost Track of Time:** 3  
+🍇 **Lost Track of Time:** 4  
 ☕ **Just One More Run:** 1  
 🎒 **Worth Packing:** 0  
 🛠 **Needs Tinkering:** 0  
@@ -37,11 +37,11 @@ not benchmarking them.
 
 ## Recently tested
 
+- 🍇 [**🍇 Left 4 Dead 2**](games/left-4-dead-2.md) · Lost Track of Time · July 2026
 - 🍇 [**🍇 Ni no Kuni: Wrath of the White Witch Remastered**](games/ni-no-kuni-wrath-of-the-white-witch.md) · Lost Track of Time · July 2026
 - 🚧 [**SpongeBob SquarePants: Battle for Bikini Bottom Rehydrated**](games/spongebob-battle-for-bikini-bottom-rehydrated.md) · Leave at Home · July 2026
 - 🚧 [**Crisis Core: Final Fantasy VII Reunion**](games/crisis-core-final-fantasy-vii-reunion.md) · Leave at Home · July 2026
 - 🍇 [**Tetris Effect: Connected**](games/tetris-effect-connected.md) · Lost Track of Time · July 2026
-- ☕ [**Final Fantasy X HD Remaster**](games/final-fantasy-x-hd.md) · Just One More Run · July 2026
 
 *This section is updated automatically whenever the journal changes.*
 <!-- GAME-JOURNAL:END -->
