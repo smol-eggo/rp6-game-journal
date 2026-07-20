@@ -1,4 +1,4 @@
-# 🍇 RP6 Game Journal
+# 🍇 Retroid Pocket6 Game Journal
 
 Welcome!
 
