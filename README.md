@@ -27,21 +27,21 @@ not benchmarking them.
 <!-- GAME-JOURNAL:START -->
 ## The journal so far
 
-**Games tested:** 24
+**Games tested:** 25
 
 🍇 **Lost Track of Time:** 9  
 ☕ **Just One More Run:** 6  
 🎒 **Worth Packing:** 2  
 🛠 **Needs Tinkering:** 3  
-🚧 **Leave at Home:** 4
+🚧 **Leave at Home:** 5
 
 ## Recently tested
 
+- 🚧 [**Dead Format**](games/dead-format.md) · Leave at Home · July 2026
 - 🛠 [**Another Crab's Treasure**](games/another-crabs-treasure.md) · Needs Tinkering · July 2026
 - 🚧 [**Grand Theft Auto: San Andreas – Definitive Edition**](games/gta-sa-de.md) · Leave at Home · July 2026
 - ☕ [**Cuphead**](games/cuphead.md) · Just One More Run · July 2026
 - ☕ [**Moonlight Peaks**](games/moonlight-peaks.md) · Just One More Run · July 2026
-- 🎒 [**World of Horror**](games/world-of-horror.md) · Worth Packing · July 2026
 
 *This section is updated automatically whenever the journal changes.*
 <!-- GAME-JOURNAL:END -->
