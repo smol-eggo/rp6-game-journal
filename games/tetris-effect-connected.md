@@ -26,10 +26,10 @@ The game runs beautifully and feels perfectly suited for a handheld. Performance
 
 I simply got lost in the music, visuals, and "one more stage."
 
-## Booberry's Verdict
+## smol-eggo's Verdict
 
 One of the best handheld experiences I've had so far.
 
 ## Tested by
 
-Jens, with a very patient Chow Chow nearby.
+Jens
