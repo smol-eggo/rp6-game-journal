@@ -36,16 +36,24 @@ jobs:
       - name: Build searchable journal data
         run: python scripts/build-site.py
 
+      - name: Show generated files
+        run: |
+          echo "Contents of docs:"
+          ls -la docs
+          echo "Generated game count:"
+          python -c "import json; print(len(json.load(open('docs/games.json'))))"
+
       - name: Commit generated files
         run: |
-          if git diff --quiet README.md docs/games.json; then
-            echo "Everything is already up to date."
-            exit 0
-          fi
-
           git config user.name "rp6-journal-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add README.md docs/games.json
+
+          if git diff --cached --quiet; then
+            echo "Everything is already up to date."
+            exit 0
+          fi
+
           git commit -m "Update game journal"
           git push
