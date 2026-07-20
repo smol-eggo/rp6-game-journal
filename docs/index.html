@@ -1,1 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <title>RP6 Game Journal</title>
+
+  <meta
+    name="description"
+    content="Search compatibility experiences for PC games tested on the Retroid Pocket 6 running Armada."
+  >
+
+  <link rel="stylesheet" href="./style.css">
+  <script src="./journal.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <p class="eyebrow">Retroid Pocket 6 · Armada</p>
+
+      <h1>RP6 Game Journal</h1>
+
+      <p class="intro">
+        Life’s too short to spend it staring at an FPS counter.
+        Find out whether I forgot I was testing.
+      </p>
+
+      <a
+        class="github-link"
+        href="https://github.com/smol-eggo/rp6-game-journal"
+      >
+        View the journal on GitHub
+      </a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls" aria-labelledby="browse-heading">
+      <h2 id="browse-heading">Browse the journal</h2>
+
+      <label for="search">Search by game, store, or compatibility layer</label>
+
+      <input
+        id="search"
+        type="search"
+        placeholder="Try Mewgenics, Steam, or Proton..."
+        autocomplete="off"
+      >
+
+      <div
+        id="verdict-filters"
+        class="filter-list"
+        aria-label="Filter by verdict"
+      >
+        <button type="button" class="filter active" data-verdict="all">
+          All
+        </button>
+
+        <button type="button" class="filter" data-verdict="Lost Track of Time">
+          🍇 Lost Track of Time
+        </button>
+
+        <button type="button" class="filter" data-verdict="Just One More Run">
+          ☕ Just One More Run
+        </button>
+
+        <button type="button" class="filter" data-verdict="Worth Packing">
+          🎒 Worth Packing
+        </button>
+
+        <button type="button" class="filter" data-verdict="Needs Tinkering">
+          🛠 Needs Tinkering
+        </button>
+
+        <button type="button" class="filter" data-verdict="Leave at Home">
+          🚧 Leave at Home
+        </button>
+      </div>
+
+      <div class="result-bar">
+        <p id="result-count" aria-live="polite">Loading journal...</p>
+
+        <label for="sort">
+          Sort
+          <select id="sort">
+            <option value="title">A to Z</option>
+            <option value="verdict">Verdict</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section
+      id="results"
+      class="game-grid"
+      aria-label="Game reviews"
+      aria-live="polite"
+    ></section>
+
+    <noscript>
+      <p class="message">
+        JavaScript is required for search and filtering.
+        The reviews remain available in the GitHub repository.
+      </p>
+    </noscript>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        An independent community project by smol-eggo.
+        Not officially affiliated with Retroid or Armada.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
