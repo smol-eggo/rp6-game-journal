@@ -37,9 +37,9 @@ not benchmarking them.
 
 ## Recently tested
 
+- ☕ [**Killing Floor 2**](games/killing-floor-2.md) · Just One More Run · July 2026
 - 🍇 [**Left 4 Dead 2**](games/left-4-dead-2.md) · Lost Track of Time · July 2026
 - 🍇 [**Ni no Kuni: Wrath of the White Witch Remastered**](games/ni-no-kuni-wrath-of-the-white-witch.md) · Lost Track of Time · July 2026
-- ☕ [**☕ Killing Floor 2**](games/killing-floor-2.md) · Just One More Run · July 2026
 - 🚧 [**SpongeBob SquarePants: Battle for Bikini Bottom Rehydrated**](games/spongebob-battle-for-bikini-bottom-rehydrated.md) · Leave at Home · July 2026
 - 🚧 [**Crisis Core: Final Fantasy VII Reunion**](games/crisis-core-final-fantasy-vii-reunion.md) · Leave at Home · July 2026
 
