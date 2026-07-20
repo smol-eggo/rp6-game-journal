@@ -53,3 +53,20 @@ If I forget I'm testing, that's the highest recommendation I can give.
 
 *This section is updated automatically whenever the journal changes.*
 <!-- GAME-JOURNAL:END -->
+
+## 🎮 Recommend a Game
+
+Have a game you'd like to see tested on the Retroid Pocket 6 running Armada?
+
+I'd love suggestions!
+
+👉 Head over to the Discussions tab (or open an Issue) and let me know what you'd like to see next.
+
+Please include:
+- 🎮 Game title
+- 🏪 Steam, GOG, Epic, etc.
+- 💬 Anything specific you'd like me to test
+
+I'll add it to the backlog and work through requests whenever I can.
+
+Thanks for helping grow the journal! 🍇
