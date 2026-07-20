@@ -27,9 +27,9 @@ not benchmarking them.
 <!-- GAME-JOURNAL:START -->
 ## The journal so far
 
-**Games tested:** 28
+**Games tested:** 29
 
-🍇 **Lost Track of Time:** 9  
+🍇 **Lost Track of Time:** 10  
 ☕ **Just One More Run:** 7  
 🎒 **Worth Packing:** 2  
 🛠 **Needs Tinkering:** 3  
@@ -37,11 +37,11 @@ not benchmarking them.
 
 ## Recently tested
 
+- 🍇 [**CloverPit**](games/cloverpit.md) · Lost Track of Time · July 2026
 - ☕ [**Far Cry 3**](games/far-cry-3.md) · Just One More Run · July 2026
 - 🚧 [**Diablo II: Resurrected**](games/diablo-ii-resurrected.md) · Leave at Home · July 2026
 - 🚧 [**Party Animals**](games/party-animals.md) · Leave at Home · July 2026
 - 🚧 [**Dead Format**](games/dead-format.md) · Leave at Home · July 2026
-- 🛠 [**Another Crab's Treasure**](games/another-crabs-treasure.md) · Needs Tinkering · July 2026
 
 *This section is updated automatically whenever the journal changes.*
 <!-- GAME-JOURNAL:END -->
