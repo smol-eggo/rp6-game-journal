@@ -27,21 +27,21 @@ not benchmarking them.
 <!-- GAME-JOURNAL:START -->
 ## The journal so far
 
-**Games tested:** 31
+**Games tested:** 32
 
 🍇 **Lost Track of Time:** 11  
 ☕ **Just One More Run:** 7  
-🎒 **Worth Packing:** 2  
+🎒 **Worth Packing:** 3  
 🛠 **Needs Tinkering:** 3  
 🚧 **Leave at Home:** 8
 
 ## Recently tested
 
+- 🎒 [**Siralim Ultimate**](games/siralim-ultimate.md) · Worth Packing · July 2026
 - 🍇 [**Guild Wars Reforged**](games/guild-wars-reforged.md) · Lost Track of Time · July 2026
 - 🚧 [**Gamble With Friends**](games/gamble-with-friends.md) · Leave at Home · July 2026
 - 🍇 [**CloverPit**](games/cloverpit.md) · Lost Track of Time · July 2026
 - ☕ [**Far Cry 3**](games/far-cry-3.md) · Just One More Run · July 2026
-- 🚧 [**Diablo II: Resurrected**](games/diablo-ii-resurrected.md) · Leave at Home · July 2026
 
 *This section is updated automatically whenever the journal changes.*
 <!-- GAME-JOURNAL:END -->
