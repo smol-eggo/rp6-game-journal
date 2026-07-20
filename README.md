@@ -1,4 +1,4 @@
-# 🍇 Retroid Pocket6 Game Journal
+# 🍇 Retroid Pocket 6 Game Journal
 
 Welcome!
 
