@@ -1,4 +1,4 @@
-# 🍇 Ni no Kuni: Wrath of the White Witch Remastered
+# Ni no Kuni: Wrath of the White Witch Remastered
 
 ## Verdict
 
