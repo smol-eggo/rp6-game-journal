@@ -27,21 +27,21 @@ not benchmarking them.
 <!-- GAME-JOURNAL:START -->
 ## The journal so far
 
-**Games tested:** 15
+**Games tested:** 17
 
-🍇 **Lost Track of Time:** 6  
+🍇 **Lost Track of Time:** 7  
 ☕ **Just One More Run:** 4  
 🎒 **Worth Packing:** 1  
-🛠 **Needs Tinkering:** 1  
+🛠 **Needs Tinkering:** 2  
 🚧 **Leave at Home:** 3
 
 ## Recently tested
 
+- 🛠 [**Atlyss**](games/atlyss.md) · Needs Tinkering · July 2026
+- 🍇 [**Vampire Survivors**](games/vampire-survivors.md) · Lost Track of Time · July 2026
 - ☕ [**Glover**](games/glover.md) · Just One More Run · July 2026
 - 🎒 [**Zeepkist**](games/zeepkist.md) · Worth Packing · July 2026
 - 🍇 [**Everhood**](games/everhood.md) · Lost Track of Time · July 2026
-- 🚧 [**Final Fantasy XIII**](games/final-fantasy-xiii.md) · Leave at Home · July 2026
-- ☕ [**Ghosts 'n Goblins Resurrection**](games/ghost-n-goblins-resurrection.md) · Just One More Run · July 2026
 
 *This section is updated automatically whenever the journal changes.*
 <!-- GAME-JOURNAL:END -->
