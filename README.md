@@ -1,16 +1,8 @@
 # 🍇 Retroid Pocket 6 Game Journal
+> *Life's too short to spend it staring at an FPS counter.*
 
-Welcome!
-
-This isn't a benchmark database.
-
-This is my personal compatibility journal for the Retroid Pocket 6 running Armada.
-
-I don't boot games for five minutes and call them compatible.
-
-I play them.
-
-If I forget I'm testing, that's the highest recommendation I can give.
+A compatibility journal focused on playing games,
+not benchmarking them.
 
 ---
 
