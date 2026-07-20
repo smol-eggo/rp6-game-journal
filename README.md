@@ -27,9 +27,9 @@ not benchmarking them.
 <!-- GAME-JOURNAL:START -->
 ## The journal so far
 
-**Games tested:** 33
+**Games tested:** 34
 
-🍇 **Lost Track of Time:** 12  
+🍇 **Lost Track of Time:** 13  
 ☕ **Just One More Run:** 7  
 🎒 **Worth Packing:** 3  
 🛠 **Needs Tinkering:** 3  
@@ -37,11 +37,11 @@ not benchmarking them.
 
 ## Recently tested
 
+- 🍇 [**Hollow Knight: Silksong**](games/hollow-knight-silksong.md) · Lost Track of Time · July 2026
 - 🍇 [**Mewgenics**](games/mewgenics.md) · Lost Track of Time · July 2026
 - 🎒 [**Siralim Ultimate**](games/siralim-ultimate.md) · Worth Packing · July 2026
 - 🍇 [**Guild Wars Reforged**](games/guild-wars-reforged.md) · Lost Track of Time · July 2026
 - 🚧 [**Gamble With Friends**](games/gamble-with-friends.md) · Leave at Home · July 2026
-- 🍇 [**CloverPit**](games/cloverpit.md) · Lost Track of Time · July 2026
 
 *This section is updated automatically whenever the journal changes.*
 <!-- GAME-JOURNAL:END -->
