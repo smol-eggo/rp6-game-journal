@@ -4,6 +4,7 @@
 A compatibility journal focused on playing games,
 not benchmarking them.
 
+[🎮 Browse Reviews](games) · [💬 Discussions](../../discussions) · [🍇 Recommend a Game](../../discussions/categories/game-requests)
 ---
 
 ## Rating System
