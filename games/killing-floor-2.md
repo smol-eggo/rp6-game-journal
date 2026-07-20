@@ -1,4 +1,4 @@
-# ☕ Killing Floor 2
+# Killing Floor 2
 
 ## Verdict
 
