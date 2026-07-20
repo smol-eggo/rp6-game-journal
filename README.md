@@ -46,19 +46,23 @@ not benchmarking them.
 *This section is updated automatically whenever the journal changes.*
 <!-- GAME-JOURNAL:END -->
 
-## 🎮 Recommend a Game
+## Recommend a Game
 
 Have a game you'd like to see tested on the Retroid Pocket 6 running Armada?
 
-I'd love suggestions!
-
-👉 Head over to the Discussions tab (or open an Issue) and let me know what you'd like to see next.
+[🎮 Recommend a game in Discussions](https://github.com/smol-eggo/rp6-game-journal/discussions/categories/game-requests)
 
 Please include:
-- 🎮 Game title
-- 🏪 Steam, GOG, Epic, etc.
-- 💬 Anything specific you'd like me to test
 
-I'll add it to the backlog and work through requests whenever I can.
+- Game title
+- Store or launcher
+- Anything specific you'd like me to test
 
 Thanks for helping grow the journal! 🍇
+
+## ⚓ Powered by Armada
+
+These games were tested on the Retroid Pocket 6 using
+[Armada](https://github.com/virtudude/armada), a SteamOS-like Linux distribution for ARM handhelds.
+
+This journal is an independent community project and is not officially affiliated with Armada.
