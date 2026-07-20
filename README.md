@@ -32,14 +32,6 @@ If I forget I'm testing, that's the highest recommendation I can give.
 > Better played elsewhere.
 
 ---
-
-## Recently Tested
-
-| Game | Rating |
-|------|--------|
-| Binding of Isaac | 🍇 |
-| Tetris Effect | 🍇 |
-| Ni no Kuni | 🍇 |
-| Final Fantasy X | ☕ |
-| Crisis Core Reunion | 🚧 |
-| SpongeBob Rehydrated | 🚧 |
+<!-- GAME-JOURNAL:START -->
+The journal librarian is still arranging the shelves...
+<!-- GAME-JOURNAL:END -->
