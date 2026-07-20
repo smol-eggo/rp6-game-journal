@@ -27,9 +27,9 @@ not benchmarking them.
 <!-- GAME-JOURNAL:START -->
 ## The journal so far
 
-**Games tested:** 17
+**Games tested:** 18
 
-🍇 **Lost Track of Time:** 7  
+🍇 **Lost Track of Time:** 8  
 ☕ **Just One More Run:** 4  
 🎒 **Worth Packing:** 1  
 🛠 **Needs Tinkering:** 2  
@@ -37,11 +37,11 @@ not benchmarking them.
 
 ## Recently tested
 
+- 🍇 [**Digimon Story: Cyber Sleuth**](games/digimon-story-cyber-sleuth.md) · Lost Track of Time · July 2026
 - 🛠 [**Atlyss**](games/atlyss.md) · Needs Tinkering · July 2026
 - 🍇 [**Vampire Survivors**](games/vampire-survivors.md) · Lost Track of Time · July 2026
 - ☕ [**Glover**](games/glover.md) · Just One More Run · July 2026
 - 🎒 [**Zeepkist**](games/zeepkist.md) · Worth Packing · July 2026
-- 🍇 [**Everhood**](games/everhood.md) · Lost Track of Time · July 2026
 
 *This section is updated automatically whenever the journal changes.*
 <!-- GAME-JOURNAL:END -->
