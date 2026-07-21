@@ -28,9 +28,9 @@ not benchmarking them.
 <!-- GAME-JOURNAL:START -->
 ## The journal so far
 
-**Games tested:** 37
+**Games tested:** 38
 
-🍇 **Lost Track of Time:** 15  
+🍇 **Lost Track of Time:** 16  
 ☕ **Just One More Run:** 7  
 🎒 **Worth Packing:** 3  
 🛠 **Needs Tinkering:** 3  
@@ -38,11 +38,11 @@ not benchmarking them.
 
 ## Recently tested
 
+- 🍇 [**Stubbs the Zombie in Rebel Without a Pulse**](games/stubbs-the-zombie.md) · Lost Track of Time · July 2026
 - 🍇 [**Animal Well**](games/animal-well.md) · Lost Track of Time · July 2026
 - 🍇 [**Alice: Madness Returns**](games/alice-madness-returns.md) · Lost Track of Time · July 2026
 - 🚧 [**Gunfire Reborn**](games/gunfire-reborn.md) · Leave at Home · July 2026
 - 🍇 [**Hollow Knight: Silksong**](games/hollow-knight-silksong.md) · Lost Track of Time · July 2026
-- 🍇 [**Mewgenics**](games/mewgenics.md) · Lost Track of Time · July 2026
 
 *This section is updated automatically whenever the journal changes.*
 <!-- GAME-JOURNAL:END -->
