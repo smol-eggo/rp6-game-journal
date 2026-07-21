@@ -6,7 +6,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/alice-madness-returns.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/alice-madness-returns.md",
+    "reviewUrl": "reviews/alice-madness-returns/"
   },
   {
     "title": "Animal Well",
@@ -15,7 +16,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/animal-well.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/animal-well.md",
+    "reviewUrl": "reviews/animal-well/"
   },
   {
     "title": "Another Crab's Treasure",
@@ -24,7 +26,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/another-crabs-treasure.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/another-crabs-treasure.md",
+    "reviewUrl": "reviews/another-crabs-treasure/"
   },
   {
     "title": "Atlyss",
@@ -33,7 +36,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/atlyss.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/atlyss.md",
+    "reviewUrl": "reviews/atlyss/"
   },
   {
     "title": "Bugsnax",
@@ -42,7 +46,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/bugsnax.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/bugsnax.md",
+    "reviewUrl": "reviews/bugsnax/"
   },
   {
     "title": "CloverPit",
@@ -51,7 +56,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/cloverpit.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/cloverpit.md",
+    "reviewUrl": "reviews/cloverpit/"
   },
   {
     "title": "Crisis Core: Final Fantasy VII Reunion",
@@ -60,7 +66,8 @@
     "store": "Steam",
     "compatibilityLayer": "Not listed",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/crisis-core-final-fantasy-vii-reunion.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/crisis-core-final-fantasy-vii-reunion.md",
+    "reviewUrl": "reviews/crisis-core-final-fantasy-vii-reunion/"
   },
   {
     "title": "Cuphead",
@@ -69,7 +76,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/cuphead.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/cuphead.md",
+    "reviewUrl": "reviews/cuphead/"
   },
   {
     "title": "Date Everything!",
@@ -78,7 +86,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/date-everything.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/date-everything.md",
+    "reviewUrl": "reviews/date-everything/"
   },
   {
     "title": "Dead Format",
@@ -87,7 +96,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/dead-format.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/dead-format.md",
+    "reviewUrl": "reviews/dead-format/"
   },
   {
     "title": "Diablo II: Resurrected",
@@ -96,7 +106,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/diablo-ii-resurrected.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/diablo-ii-resurrected.md",
+    "reviewUrl": "reviews/diablo-ii-resurrected/"
   },
   {
     "title": "Digimon Story: Cyber Sleuth",
@@ -105,7 +116,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/digimon-story-cyber-sleuth.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/digimon-story-cyber-sleuth.md",
+    "reviewUrl": "reviews/digimon-story-cyber-sleuth/"
   },
   {
     "title": "Dragon Quest XI S: Echoes of an Elusive Age",
@@ -114,7 +126,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton (multiple versions tested)",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/dragon-quest-xi-s.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/dragon-quest-xi-s.md",
+    "reviewUrl": "reviews/dragon-quest-xi-s/"
   },
   {
     "title": "Everhood",
@@ -123,7 +136,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/everhood.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/everhood.md",
+    "reviewUrl": "reviews/everhood/"
   },
   {
     "title": "Far Cry 3",
@@ -132,7 +146,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/far-cry-3.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/far-cry-3.md",
+    "reviewUrl": "reviews/far-cry-3/"
   },
   {
     "title": "Final Fantasy X HD Remaster",
@@ -141,7 +156,8 @@
     "store": "Steam",
     "compatibilityLayer": "Not listed",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/final-fantasy-x-hd.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/final-fantasy-x-hd.md",
+    "reviewUrl": "reviews/final-fantasy-x-hd/"
   },
   {
     "title": "Final Fantasy XIII",
@@ -150,7 +166,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/final-fantasy-xiii.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/final-fantasy-xiii.md",
+    "reviewUrl": "reviews/final-fantasy-xiii/"
   },
   {
     "title": "Gamble With Friends",
@@ -159,7 +176,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/gamble-with-friends.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/gamble-with-friends.md",
+    "reviewUrl": "reviews/gamble-with-friends/"
   },
   {
     "title": "Ghosts 'n Goblins Resurrection",
@@ -168,7 +186,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/ghost-n-goblins-resurrection.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/ghost-n-goblins-resurrection.md",
+    "reviewUrl": "reviews/ghost-n-goblins-resurrection/"
   },
   {
     "title": "Glover",
@@ -177,7 +196,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/glover.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/glover.md",
+    "reviewUrl": "reviews/glover/"
   },
   {
     "title": "Grand Theft Auto: San Andreas – Definitive Edition",
@@ -186,7 +206,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/gta-sa-de.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/gta-sa-de.md",
+    "reviewUrl": "reviews/gta-sa-de/"
   },
   {
     "title": "Guild Wars Reforged",
@@ -195,7 +216,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/guild-wars-reforged.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/guild-wars-reforged.md",
+    "reviewUrl": "reviews/guild-wars-reforged/"
   },
   {
     "title": "Gunfire Reborn",
@@ -204,7 +226,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/gunfire-reborn.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/gunfire-reborn.md",
+    "reviewUrl": "reviews/gunfire-reborn/"
   },
   {
     "title": "Hollow Knight: Silksong",
@@ -213,7 +236,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/hollow-knight-silksong.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/hollow-knight-silksong.md",
+    "reviewUrl": "reviews/hollow-knight-silksong/"
   },
   {
     "title": "Killing Floor 2",
@@ -222,7 +246,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/killing-floor-2.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/killing-floor-2.md",
+    "reviewUrl": "reviews/killing-floor-2/"
   },
   {
     "title": "Left 4 Dead 2",
@@ -231,7 +256,8 @@
     "store": "Steam",
     "compatibilityLayer": "Native Linux",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/left-4-dead-2.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/left-4-dead-2.md",
+    "reviewUrl": "reviews/left-4-dead-2/"
   },
   {
     "title": "Mewgenics",
@@ -240,7 +266,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/mewgenics.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/mewgenics.md",
+    "reviewUrl": "reviews/mewgenics/"
   },
   {
     "title": "Moonlight Peaks",
@@ -249,7 +276,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/moonlight-peaks.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/moonlight-peaks.md",
+    "reviewUrl": "reviews/moonlight-peaks/"
   },
   {
     "title": "Ni no Kuni: Wrath of the White Witch Remastered",
@@ -258,7 +286,8 @@
     "store": "Steam",
     "compatibilityLayer": "CachyOS Proton 11",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/ni-no-kuni-wrath-of-the-white-witch.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/ni-no-kuni-wrath-of-the-white-witch.md",
+    "reviewUrl": "reviews/ni-no-kuni-wrath-of-the-white-witch/"
   },
   {
     "title": "Party Animals",
@@ -267,7 +296,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/party-animals.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/party-animals.md",
+    "reviewUrl": "reviews/party-animals/"
   },
   {
     "title": "Siralim Ultimate",
@@ -276,7 +306,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/siralim-ultimate.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/siralim-ultimate.md",
+    "reviewUrl": "reviews/siralim-ultimate/"
   },
   {
     "title": "SpongeBob SquarePants: Battle for Bikini Bottom Rehydrated",
@@ -285,7 +316,8 @@
     "store": "Steam",
     "compatibilityLayer": "Not listed",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/spongebob-battle-for-bikini-bottom-rehydrated.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/spongebob-battle-for-bikini-bottom-rehydrated.md",
+    "reviewUrl": "reviews/spongebob-battle-for-bikini-bottom-rehydrated/"
   },
   {
     "title": "Stubbs the Zombie in Rebel Without a Pulse",
@@ -294,7 +326,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/stubbs-the-zombie.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/stubbs-the-zombie.md",
+    "reviewUrl": "reviews/stubbs-the-zombie/"
   },
   {
     "title": "Tetris Effect: Connected",
@@ -303,7 +336,8 @@
     "store": "Steam",
     "compatibilityLayer": "Not listed",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/tetris-effect-connected.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/tetris-effect-connected.md",
+    "reviewUrl": "reviews/tetris-effect-connected/"
   },
   {
     "title": "The Binding of Isaac: Rebirth",
@@ -312,7 +346,8 @@
     "store": "Steam",
     "compatibilityLayer": "Not listed",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/binding-of-isaac-rebirth.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/binding-of-isaac-rebirth.md",
+    "reviewUrl": "reviews/binding-of-isaac-rebirth/"
   },
   {
     "title": "Vampire Survivors",
@@ -321,7 +356,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/vampire-survivors.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/vampire-survivors.md",
+    "reviewUrl": "reviews/vampire-survivors/"
   },
   {
     "title": "World of Horror",
@@ -330,7 +366,8 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/world-of-horror.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/world-of-horror.md",
+    "reviewUrl": "reviews/world-of-horror/"
   },
   {
     "title": "Zeepkist",
@@ -339,6 +376,7 @@
     "store": "Steam",
     "compatibilityLayer": "Proton",
     "date": "July 2026",
-    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/zeepkist.md"
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/zeepkist.md",
+    "reviewUrl": "reviews/zeepkist/"
   }
 ]

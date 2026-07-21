@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://smol-eggo.github.io/rp6-game-journal/sitemap.xml
