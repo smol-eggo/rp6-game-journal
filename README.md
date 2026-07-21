@@ -38,11 +38,11 @@ not benchmarking them.
 
 ## Recently tested
 
+- 🚧 [**Diablo II: Resurrected**](games/diablo-ii-resurrected.md) · Leave at Home · July 2026
 - 🍇 [**Stubbs the Zombie in Rebel Without a Pulse**](games/stubbs-the-zombie.md) · Lost Track of Time · July 2026
 - 🍇 [**Animal Well**](games/animal-well.md) · Lost Track of Time · July 2026
 - 🍇 [**Alice: Madness Returns**](games/alice-madness-returns.md) · Lost Track of Time · July 2026
 - 🚧 [**Gunfire Reborn**](games/gunfire-reborn.md) · Leave at Home · July 2026
-- 🍇 [**Hollow Knight: Silksong**](games/hollow-knight-silksong.md) · Lost Track of Time · July 2026
 
 *This section is updated automatically whenever the journal changes.*
 <!-- GAME-JOURNAL:END -->
