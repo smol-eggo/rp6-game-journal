@@ -1,15 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
 
-  <title>RP6 Game Journal</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
   <meta
     name="description"
-    content="Search compatibility experiences for PC games tested on the Retroid Pocket 6 running Armada."
+    content="An experience-first game compatibility journal for the Retroid Pocket 6 running Armada."
   >
+
+  <title>RP6 Game Journal</title>
 
   <link rel="stylesheet" href="./style.css">
   <script src="./journal.js" defer></script>
@@ -17,103 +21,269 @@
 
 <body>
   <header class="site-header">
-    <div class="container">
-      <p class="eyebrow">Retroid Pocket 6 · Armada</p>
+    <div class="container hero-layout">
+      <div class="hero-copy">
+        <p class="eyebrow">
+          Retroid Pocket 6 · Armada
+        </p>
 
-      <h1>RP6 Game Journal</h1>
+        <h1>RP6 Game Journal</h1>
 
-      <p class="intro">
-        Life’s too short to spend it staring at an FPS counter.
-        Find out whether I forgot I was testing.
-      </p>
+        <p class="intro">
+          Compatibility isn’t just about FPS.
+          It’s about forgetting you’re testing.
+        </p>
 
-      <a
-        class="github-link"
-        href="https://github.com/smol-eggo/rp6-game-journal"
-      >
-        View the journal on GitHub
-      </a>
+        <div class="hero-actions">
+          <a class="primary-link" href="#journal">
+            Browse the journal
+          </a>
+
+          <a
+            class="secondary-link"
+            href="https://github.com/smol-eggo/rp6-game-journal"
+          >
+            View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-question" aria-label="Journal philosophy">
+        <p class="hero-question-label">
+          The question behind every review
+        </p>
+
+        <p class="hero-question-text">
+          Did I forget I was testing?
+        </p>
+
+        <span class="hero-question-mark" aria-hidden="true">
+          🍇
+        </span>
+      </aside>
     </div>
   </header>
 
-  <main class="container">
-    <section class="controls" aria-labelledby="browse-heading">
-      <h2 id="browse-heading">Browse the journal</h2>
-
-      <label for="search">Search by game, store, or compatibility layer</label>
-
-      <input
-        id="search"
-        type="search"
-        placeholder="Try Mewgenics, Steam, or Proton..."
-        autocomplete="off"
+  <main id="journal">
+    <div class="container">
+      <section
+        class="statistics-section"
+        aria-labelledby="statistics-heading"
       >
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">The journal so far</p>
+            <h2 id="statistics-heading">A growing travel log</h2>
+          </div>
 
-      <div
-        id="verdict-filters"
-        class="filter-list"
-        aria-label="Filter by verdict"
+          <p class="section-description">
+            Every game tested gets a page, whether it becomes
+            an obsession or refuses to leave the loading screen.
+          </p>
+        </div>
+
+        <div class="statistics-grid" aria-live="polite">
+          <article class="stat-card stat-card-total">
+            <span class="stat-icon" aria-hidden="true">🎮</span>
+
+            <div>
+              <strong class="stat-number" id="stat-total">–</strong>
+              <span class="stat-label">Games tested</span>
+            </div>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-icon" aria-hidden="true">🍇</span>
+
+            <div>
+              <strong class="stat-number" id="stat-lost-track">–</strong>
+              <span class="stat-label">Lost track of time</span>
+            </div>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-icon" aria-hidden="true">🎒</span>
+
+            <div>
+              <strong class="stat-number" id="stat-packable">–</strong>
+              <span class="stat-label">Worth packing or better</span>
+            </div>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-icon" aria-hidden="true">🚧</span>
+
+            <div>
+              <strong class="stat-number" id="stat-leave-home">–</strong>
+              <span class="stat-label">Best left at home</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="featured-section"
+        id="featured-section"
+        aria-labelledby="featured-heading"
+        hidden
       >
-        <button type="button" class="filter active" data-verdict="all">
-          All
-        </button>
+        <div class="featured-copy">
+          <p class="section-kicker">Featured from the journal</p>
 
-        <button type="button" class="filter" data-verdict="Lost Track of Time">
-          🍇 Lost Track of Time
-        </button>
+          <p
+            class="featured-verdict"
+            id="featured-verdict"
+          ></p>
 
-        <button type="button" class="filter" data-verdict="Just One More Run">
-          ☕ Just One More Run
-        </button>
+          <h2 id="featured-heading">
+            <a id="featured-title" href="#"></a>
+          </h2>
 
-        <button type="button" class="filter" data-verdict="Worth Packing">
-          🎒 Worth Packing
-        </button>
+          <p class="featured-details" id="featured-details"></p>
 
-        <button type="button" class="filter" data-verdict="Needs Tinkering">
-          🛠 Needs Tinkering
-        </button>
+          <p class="featured-note">
+            A randomly selected favourite from the handheld shelf.
+          </p>
 
-        <button type="button" class="filter" data-verdict="Leave at Home">
-          🚧 Leave at Home
-        </button>
-      </div>
+          <a class="featured-link" id="featured-link" href="#">
+            Read the full review
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
 
-      <div class="result-bar">
-        <p id="result-count" aria-live="polite">Loading journal...</p>
+        <div class="featured-decoration" aria-hidden="true">
+          <span class="featured-device">
+            <span class="featured-screen">
+              Did I forget<br>
+              I was testing?
+            </span>
 
-        <label for="sort">
-          Sort
-          <select id="sort">
-            <option value="title">A to Z</option>
-            <option value="verdict">Verdict</option>
-          </select>
-        </label>
-      </div>
-    </section>
+            <span class="featured-controls">●　✚</span>
+          </span>
+        </div>
+      </section>
 
-    <section
-      id="results"
-      class="game-grid"
-      aria-label="Game reviews"
-      aria-live="polite"
-    ></section>
+      <section class="controls" aria-labelledby="browse-heading">
+        <div class="controls-heading">
+          <div>
+            <p class="section-kicker">Find your next game</p>
+            <h2 id="browse-heading">Browse the journal</h2>
+          </div>
 
-    <noscript>
-      <p class="message">
-        JavaScript is required for search and filtering.
-        The reviews remain available in the GitHub repository.
-      </p>
-    </noscript>
+          <p>
+            Search by game, store, compatibility layer, or verdict.
+          </p>
+        </div>
+
+        <label for="search">Search the journal</label>
+
+        <div class="search-wrapper">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+
+          <input
+            id="search"
+            type="search"
+            placeholder="Try Mewgenics, Steam, or Proton…"
+            autocomplete="off"
+          >
+        </div>
+
+        <div
+          class="filter-list"
+          aria-label="Filter games by verdict"
+        >
+          <button
+            class="filter active"
+            type="button"
+            data-verdict="all"
+          >
+            All games
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-verdict="Lost Track of Time"
+          >
+            🍇 Lost Track of Time
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-verdict="Just One More Run"
+          >
+            ☕ Just One More Run
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-verdict="Worth Packing"
+          >
+            🎒 Worth Packing
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-verdict="Needs Tinkering"
+          >
+            🛠 Needs Tinkering
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-verdict="Leave at Home"
+          >
+            🚧 Leave at Home
+          </button>
+        </div>
+
+        <div class="result-bar">
+          <p id="result-count" aria-live="polite">
+            Loading journal…
+          </p>
+
+          <label for="sort">
+            Sort
+
+            <select id="sort">
+              <option value="alphabetical">A to Z</option>
+              <option value="verdict">Verdict</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section
+        class="game-grid"
+        id="results"
+        aria-label="Game reviews"
+      >
+        <p class="message">Loading journal…</p>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="container footer-layout">
       <p>
         An independent community project by smol-eggo.
+      </p>
+
+      <p>
         Not officially affiliated with Retroid or Armada.
       </p>
     </div>
   </footer>
+
+  <noscript>
+    <div class="noscript-message">
+      JavaScript is required for search and filtering.
+      The reviews remain available in the GitHub repository.
+    </div>
+  </noscript>
 </body>
 </html>
