@@ -1,6 +1,6 @@
 /* =========================================================
    RP6 Game Journal
-   Phase 2 violet handheld theme
+   Violet handheld theme with escaping RP6 artwork
    ========================================================= */
 
 :root {
@@ -114,6 +114,8 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
+
+  overflow-x: hidden;
 
   background:
     radial-gradient(
@@ -252,7 +254,10 @@ a:focus-visible {
   z-index: 1;
 
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(260px, 0.6fr);
+
   align-items: center;
   gap: clamp(2rem, 6vw, 5rem);
 }
@@ -333,6 +338,7 @@ h1 {
   border-color: var(--accent-hover);
   background: var(--accent-hover);
   color: var(--accent-text);
+
   box-shadow: var(--shadow);
   transform: translateY(-2px);
 }
@@ -506,39 +512,83 @@ h1 {
 
 /* =========================================================
    Featured review
+   Escaping handheld artwork
    ========================================================= */
 
 .featured-section {
   position: relative;
-  overflow: hidden;
 
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(250px, 0.65fr);
-  align-items: center;
-  gap: 2rem;
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(300px, 0.95fr);
 
-  margin: 1.25rem 0 2.5rem;
-  padding: clamp(1.5rem, 5vw, 3rem);
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+
+  min-height: 365px;
+
+  margin: 2.5rem 0 4.75rem;
+  padding:
+    clamp(1.75rem, 5vw, 3.25rem)
+    0
+    clamp(1.75rem, 5vw, 3.25rem)
+    clamp(1.75rem, 5vw, 3.25rem);
+
+  overflow: visible;
 
   border: 1px solid var(--border-strong);
   border-radius: calc(var(--radius-large) + 0.25rem);
 
   background:
     radial-gradient(
-      circle at 90% 20%,
-      rgba(116, 84, 168, 0.22),
-      transparent 21rem
+      circle at 88% 35%,
+      rgba(116, 84, 168, 0.2),
+      transparent 24rem
     ),
     var(--surface);
 
   box-shadow: var(--shadow);
 
+  isolation: isolate;
+
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
 
+.featured-section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: 22rem;
+  height: 22rem;
+  right: -5rem;
+  top: 50%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(116, 84, 168, 0.16),
+      transparent 68%
+    );
+
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
 .featured-section[hidden] {
   display: none;
+}
+
+.featured-copy {
+  position: relative;
+  z-index: 3;
+
+  min-width: 0;
+  padding-right: 1rem;
 }
 
 .featured-verdict {
@@ -605,65 +655,58 @@ h1 {
   transform: translateX(3px);
 }
 
-.featured-decoration {
-  display: grid;
-  place-items: center;
-}
 
-.featured-device {
+/* The image is deliberately larger than its grid column. */
+
+.featured-decoration {
+  position: relative;
+  z-index: 2;
+
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-start;
 
-  width: min(100%, 16rem);
-  aspect-ratio: 1.65 / 1;
-  padding: 1rem;
+  min-width: 0;
+  min-height: 270px;
 
-  border: 2px solid rgba(73, 49, 111, 0.28);
-  border-radius: 2rem;
+  overflow: visible;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(116, 84, 168, 0.82),
-      rgba(73, 49, 111, 0.94)
-    );
-
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.28),
-    0 18px 34px rgba(58, 38, 86, 0.22);
-
-  transform: rotate(3deg);
-}
-
-.featured-decoration {
-  display: grid;
-  place-items: center;
-  min-height: 220px;
+  pointer-events: none;
 }
 
 .featured-device-image {
   display: block;
-  width: min(100%, 360px);
+
+  width: clamp(520px, 48vw, 690px);
+  max-width: none;
   height: auto;
 
   filter:
-    drop-shadow(0 22px 24px rgba(58, 38, 86, 0.22))
-    drop-shadow(0 6px 8px rgba(58, 38, 86, 0.14));
+    drop-shadow(0 28px 28px rgba(58, 38, 86, 0.22))
+    drop-shadow(0 8px 10px rgba(58, 38, 86, 0.12));
 
-  transform: rotate(3deg);
+  transform:
+    translateX(-3%)
+    translateY(3%)
+    rotate(3deg);
+
+  transform-origin: center;
 
   transition:
-    transform 220ms ease,
-    filter 220ms ease;
+    transform 260ms ease,
+    filter 260ms ease;
 }
 
 .featured-section:hover .featured-device-image {
-  transform: rotate(1deg) translateY(-4px);
-
   filter:
-    drop-shadow(0 28px 30px rgba(58, 38, 86, 0.26))
-    drop-shadow(0 8px 10px rgba(58, 38, 86, 0.16));
+    drop-shadow(0 34px 34px rgba(58, 38, 86, 0.27))
+    drop-shadow(0 10px 12px rgba(58, 38, 86, 0.15));
+
+  transform:
+    translateX(-5%)
+    translateY(-1%)
+    rotate(1.5deg)
+    scale(1.015);
 }
 
 
@@ -932,11 +975,11 @@ h1 {
   background: var(--card-accent);
   opacity: 0.08;
 
+  pointer-events: none;
+
   transition:
     transform 220ms ease,
     opacity 220ms ease;
-
-  pointer-events: none;
 }
 
 .game-card:hover {
@@ -987,19 +1030,21 @@ h1 {
   margin: 0;
   padding: 0.3rem 0.65rem;
 
-  border: 1px solid color-mix(
-    in srgb,
-    var(--card-accent) 35%,
-    var(--border)
-  );
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--card-accent) 35%,
+      var(--border)
+    );
 
   border-radius: 999px;
 
-  background: color-mix(
-    in srgb,
-    var(--card-accent) 10%,
-    var(--surface-solid)
-  );
+  background:
+    color-mix(
+      in srgb,
+      var(--card-accent) 10%,
+      var(--surface-solid)
+    );
 
   color: var(--card-accent);
 
@@ -1114,7 +1159,7 @@ h1 {
 
 
 /* =========================================================
-   Footer and no-script warning
+   Footer
    ========================================================= */
 
 .site-footer {
@@ -1169,21 +1214,48 @@ h1 {
 
 
 /* =========================================================
+   Smaller desktop and tablets
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .featured-section {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(260px, 0.75fr);
+
+    min-height: 340px;
+  }
+
+  .featured-device-image {
+    width: clamp(460px, 55vw, 590px);
+
+    transform:
+      translateX(-6%)
+      translateY(3%)
+      rotate(3deg);
+  }
+
+  .featured-section:hover .featured-device-image {
+    transform:
+      translateX(-7%)
+      translateY(-1%)
+      rotate(1.5deg)
+      scale(1.01);
+  }
+}
+
+
+/* =========================================================
    Tablets
    ========================================================= */
 
 @media (max-width: 850px) {
-  .hero-layout,
-  .featured-section {
+  .hero-layout {
     grid-template-columns: 1fr;
   }
 
   .hero-question {
     max-width: 34rem;
-  }
-
-  .featured-decoration {
-    display: none;
   }
 
   .statistics-grid {
@@ -1195,6 +1267,45 @@ h1 {
     align-items: flex-start;
     flex-direction: column;
     gap: 0.65rem;
+  }
+
+  .featured-section {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    padding:
+      2rem
+      1.5rem
+      0;
+
+    overflow: hidden;
+  }
+
+  .featured-copy {
+    padding-right: 0;
+  }
+
+  .featured-decoration {
+    justify-content: center;
+
+    min-height: 230px;
+    margin-top: 0.5rem;
+  }
+
+  .featured-device-image {
+    width: min(620px, 115vw);
+
+    transform:
+      translateY(18%)
+      rotate(2deg);
+  }
+
+  .featured-section:hover .featured-device-image {
+    transform:
+      translateY(15%)
+      rotate(1deg)
+      scale(1.01);
   }
 }
 
@@ -1227,12 +1338,30 @@ h1 {
 
   .featured-section {
     margin-top: 0.75rem;
-    padding: 1.3rem;
+    margin-bottom: 3rem;
+
+    padding:
+      1.3rem
+      1.3rem
+      0;
+
     border-radius: 1.25rem;
   }
 
   .featured-section h2 {
     font-size: clamp(1.9rem, 10vw, 2.8rem);
+  }
+
+  .featured-decoration {
+    min-height: 190px;
+  }
+
+  .featured-device-image {
+    width: min(530px, 125vw);
+
+    transform:
+      translateY(20%)
+      rotate(2deg);
   }
 
   .controls {
@@ -1304,6 +1433,18 @@ h1 {
 
   .stat-card {
     padding: 0.85rem 1rem;
+  }
+
+  .featured-decoration {
+    min-height: 165px;
+  }
+
+  .featured-device-image {
+    width: 135vw;
+
+    transform:
+      translateY(23%)
+      rotate(1.5deg);
   }
 
   .filter {
