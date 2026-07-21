@@ -8,7 +8,7 @@
 
 - **Device:** Retroid Pocket 6
 - **Operating System:** Armada
-- **Store:** Battle.net
+- **Store:** Steam
 - **Compatibility Layer:** Proton
 
 ---
