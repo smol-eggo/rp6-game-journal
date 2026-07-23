@@ -31,11 +31,41 @@ def write_text(path: Path, content: str) -> None:
     path.write_text(content.rstrip() + "\n", encoding="utf-8")
 
 
+COVER_EXTENSIONS = (".webp", ".avif", ".png", ".jpg", ".jpeg")
+SOURCE_COVERS_DIR = DOCS_DIR.parent / "assets" / "covers"
+PUBLIC_COVERS_DIR = DOCS_DIR / "assets" / "covers"
+
+
+def sync_covers() -> None:
+    """Copy optional source covers into the published GitHub Pages folder.
+
+    Add artwork as assets/covers/<review-slug>.<extension>. Existing files in
+    docs/assets/covers are also supported, so the feature remains friendly to
+    either repository layout.
+    """
+    PUBLIC_COVERS_DIR.mkdir(parents=True, exist_ok=True)
+    if not SOURCE_COVERS_DIR.exists():
+        return
+
+    for source in SOURCE_COVERS_DIR.iterdir():
+        if source.is_file() and source.suffix.casefold() in COVER_EXTENSIONS:
+            shutil.copy2(source, PUBLIC_COVERS_DIR / source.name)
+
+
+def cover_url_for(review: GameReview) -> str:
+    for extension in COVER_EXTENSIONS:
+        candidate = PUBLIC_COVERS_DIR / f"{review.slug}{extension}"
+        if candidate.exists():
+            return f"assets/covers/{review.slug}{extension}"
+    return ""
+
+
 def generate_games_json(reviews: list[GameReview]) -> None:
     """Generate the homepage data while preserving the existing data contract."""
     games = []
     for review in reviews:
         encoded_filename = quote(review.source_filename)
+        cover_url = cover_url_for(review)
         games.append(
             {
                 "title": review.title,
@@ -46,6 +76,7 @@ def generate_games_json(reviews: list[GameReview]) -> None:
                 "date": review.review_date_display,
                 "url": f"{REPOSITORY_BLOB_URL}/games/{encoded_filename}",
                 "reviewUrl": f"reviews/{review.slug}/",
+                "coverUrl": cover_url,
             }
         )
 
@@ -82,7 +113,15 @@ def generate_review_pages(reviews: list[GameReview]) -> None:
         previous_review = reviews[index - 1] if index > 0 else None
         next_review = reviews[index + 1] if index + 1 < len(reviews) else None
         output = REVIEWS_DIR / review.slug / "index.html"
-        write_text(output, review_page(review, previous_review, next_review))
+        write_text(
+            output,
+            review_page(
+                review,
+                previous_review,
+                next_review,
+                cover_url=cover_url_for(review),
+            ),
+        )
 
 
 def generate_sitemap(reviews: list[GameReview]) -> None:
@@ -170,6 +209,7 @@ def build_site() -> None:
     DOCS_DIR.mkdir(parents=True, exist_ok=True)
     reviews = load_reviews(GAMES_DIR)
 
+    sync_covers()
     generate_games_json(reviews)
     generate_review_pages(reviews)
     generate_sitemap(reviews)

@@ -155,6 +155,7 @@ def review_page(
     review: GameReview,
     previous_review: GameReview | None,
     next_review: GameReview | None,
+    cover_url: str = "",
 ) -> str:
     title = html.escape(_value(review, "title"))
     verdict = html.escape(_value(review, "verdict"))
@@ -166,6 +167,22 @@ def review_page(
     date_display = html.escape(_value(review, "review_date_display", "Date not recorded"))
     relative_url = _value(review, "relative_url", f"/reviews/{_value(review, 'slug')}/")
     canonical = f"{SITE_URL}{relative_url}"
+    cover_src = f"../../{cover_url}" if cover_url else ""
+    absolute_cover = f"{SITE_URL}/{cover_url}" if cover_url else ""
+    hero_class = "review-hero review-hero-with-cover" if cover_url else "review-hero"
+    cover_markup = (
+        f'<figure class="review-cover"><img src="{html.escape(cover_src)}" '
+        f'alt="Cover art for {title}" loading="eager" decoding="async"></figure>'
+        if cover_url
+        else ""
+    )
+    social_image_meta = (
+        f'<meta property="og:image" content="{html.escape(absolute_cover)}">\n'
+        f'  <meta name="twitter:card" content="summary_large_image">\n'
+        f'  <meta name="twitter:image" content="{html.escape(absolute_cover)}">'
+        if cover_url
+        else '<meta name="twitter:card" content="summary">'
+    )
 
     rendered_content = (
         _value(review, "rendered_html")
@@ -195,6 +212,11 @@ def review_page(
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{description}">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{title} review | {html.escape(SITE_NAME)}">
+  <meta property="og:description" content="{description}">
+  <meta property="og:url" content="{html.escape(canonical)}">
+  {social_image_meta}
   <link rel="canonical" href="{html.escape(canonical)}">
   <link rel="stylesheet" href="../../assets/review-pages.css">
   <title>{title} review | {html.escape(SITE_NAME)}</title>
@@ -210,12 +232,15 @@ def review_page(
 
   <main class="review-shell">
     <article class="review-article">
-      <header class="review-hero">
-        <p class="review-kicker">RP6 field report</p>
-        <h1>{title}</h1>
-        <p class="review-verdict">{emoji} {verdict}</p>
-        <p class="review-description">{description}</p>
-        <p class="review-date">Reviewed {date_display}</p>
+      <header class="{hero_class}">
+        <div class="review-hero-copy">
+          <p class="review-kicker">RP6 field report</p>
+          <h1>{title}</h1>
+          <p class="review-verdict">{emoji} {verdict}</p>
+          <p class="review-description">{description}</p>
+          <p class="review-date">Reviewed {date_display}</p>
+        </div>
+        {cover_markup}
       </header>
 
       <section class="compatibility-panel" aria-labelledby="setup-title">
