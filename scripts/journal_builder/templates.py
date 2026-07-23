@@ -58,7 +58,16 @@ def review_page(
     date_display = html.escape(_value(review, "review_date_display", "Date not recorded"))
     relative_url = _value(review, "relative_url", f"/reviews/{_value(review, 'slug')}/")
     canonical = f"{SITE_URL}{relative_url}"
-    content = _value(review, "html_content") or _value(review, "content_html") or _value(review, "body_html")
+    # The parser stores the complete rendered Markdown in ``rendered_html``.
+    # Keep the older attribute names as compatibility fallbacks for future
+    # parser variants, but never substitute the short SEO description for the
+    # article body when the full review is available.
+    content = (
+        _value(review, "rendered_html")
+        or _value(review, "html_content")
+        or _value(review, "content_html")
+        or _value(review, "body_html")
+    )
 
     if not content:
         content = f"<p>{description}</p>"
@@ -166,3 +175,4 @@ def review_page(
   </script>
 </body>
 </html>"""
+
