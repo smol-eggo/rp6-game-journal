@@ -19,7 +19,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/alice-madness-returns.md",
     "reviewUrl": "reviews/alice-madness-returns/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/alice-madness-returns.webp"
   },
   {
     "title": "Animal Well",
@@ -30,7 +30,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/animal-well.md",
     "reviewUrl": "reviews/animal-well/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/animal-well.webp"
   },
   {
     "title": "Another Crab's Treasure",
@@ -41,7 +41,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/another-crabs-treasure.md",
     "reviewUrl": "reviews/another-crabs-treasure/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/another-crabs-treasure.webp"
   },
   {
     "title": "Atlyss",
@@ -52,7 +52,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/atlyss.md",
     "reviewUrl": "reviews/atlyss/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/atlyss.webp"
   },
   {
     "title": "Bugsnax",
@@ -63,7 +63,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/bugsnax.md",
     "reviewUrl": "reviews/bugsnax/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/bugsnax.webp"
   },
   {
     "title": "CloverPit",
@@ -74,7 +74,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/cloverpit.md",
     "reviewUrl": "reviews/cloverpit/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/cloverpit.webp"
   },
   {
     "title": "Crisis Core: Final Fantasy VII Reunion",
@@ -85,7 +85,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/crisis-core-final-fantasy-vii-reunion.md",
     "reviewUrl": "reviews/crisis-core-final-fantasy-vii-reunion/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/crisis-core-final-fantasy-vii-reunion.webp"
   },
   {
     "title": "Cuphead",
@@ -96,7 +96,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/cuphead.md",
     "reviewUrl": "reviews/cuphead/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/cuphead.webp"
   },
   {
     "title": "Date Everything!",
@@ -107,7 +107,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/date-everything.md",
     "reviewUrl": "reviews/date-everything/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/date-everything.webp"
   },
   {
     "title": "Dead Format",
@@ -118,7 +118,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/dead-format.md",
     "reviewUrl": "reviews/dead-format/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/dead-format.webp"
   },
   {
     "title": "Diablo II: Resurrected",
@@ -129,7 +129,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/diablo-ii-resurrected.md",
     "reviewUrl": "reviews/diablo-ii-resurrected/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/diablo-ii-resurrected.webp"
   },
   {
     "title": "Digimon Story: Cyber Sleuth",
@@ -140,7 +140,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/digimon-story-cyber-sleuth.md",
     "reviewUrl": "reviews/digimon-story-cyber-sleuth/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/digimon-story-cyber-sleuth.webp"
   },
   {
     "title": "Dragon Quest XI S: Echoes of an Elusive Age",
@@ -151,7 +151,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/dragon-quest-xi-s.md",
     "reviewUrl": "reviews/dragon-quest-xi-s/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/dragon-quest-xi-s.webp"
   },
   {
     "title": "Everhood",
@@ -162,7 +162,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/everhood.md",
     "reviewUrl": "reviews/everhood/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/everhood.webp"
   },
   {
     "title": "Far Cry 3",
@@ -173,7 +173,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/far-cry-3.md",
     "reviewUrl": "reviews/far-cry-3/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/far-cry-3.webp"
   },
   {
     "title": "Final Fantasy X HD Remaster",
@@ -184,7 +184,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/final-fantasy-x-hd.md",
     "reviewUrl": "reviews/final-fantasy-x-hd/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/final-fantasy-x-hd.webp"
   },
   {
     "title": "Final Fantasy XIII",
@@ -195,7 +195,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/final-fantasy-xiii.md",
     "reviewUrl": "reviews/final-fantasy-xiii/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/final-fantasy-xiii.webp"
   },
   {
     "title": "Gamble With Friends",
@@ -217,7 +217,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/ghost-n-goblins-resurrection.md",
     "reviewUrl": "reviews/ghost-n-goblins-resurrection/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/ghost-n-goblins-resurrection.webp"
   },
   {
     "title": "Glover",
@@ -228,7 +228,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/glover.md",
     "reviewUrl": "reviews/glover/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/glover.webp"
   },
   {
     "title": "Grand Theft Auto: San Andreas – Definitive Edition",
@@ -239,7 +239,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/gta-sa-de.md",
     "reviewUrl": "reviews/gta-sa-de/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/gta-sa-de.webp"
   },
   {
     "title": "Guild Wars Reforged",
@@ -250,7 +250,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/guild-wars-reforged.md",
     "reviewUrl": "reviews/guild-wars-reforged/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/guild-wars-reforged.webp"
   },
   {
     "title": "Gunfire Reborn",
@@ -261,7 +261,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/gunfire-reborn.md",
     "reviewUrl": "reviews/gunfire-reborn/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/gunfire-reborn.webp"
   },
   {
     "title": "Hollow Knight: Silksong",
@@ -272,7 +272,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/hollow-knight-silksong.md",
     "reviewUrl": "reviews/hollow-knight-silksong/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/hollow-knight-silksong.webp"
   },
   {
     "title": "Killing Floor 2",
@@ -283,7 +283,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/killing-floor-2.md",
     "reviewUrl": "reviews/killing-floor-2/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/killing-floor-2.webp"
   },
   {
     "title": "Left 4 Dead 2",
@@ -294,7 +294,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/left-4-dead-2.md",
     "reviewUrl": "reviews/left-4-dead-2/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/left-4-dead-2.webp"
   },
   {
     "title": "Mewgenics",
@@ -305,7 +305,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/mewgenics.md",
     "reviewUrl": "reviews/mewgenics/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/mewgenics.webp"
   },
   {
     "title": "Moonlight Peaks",
@@ -316,7 +316,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/moonlight-peaks.md",
     "reviewUrl": "reviews/moonlight-peaks/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/moonlight-peaks.webp"
   },
   {
     "title": "Ni no Kuni: Wrath of the White Witch Remastered",
@@ -327,7 +327,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/ni-no-kuni-wrath-of-the-white-witch.md",
     "reviewUrl": "reviews/ni-no-kuni-wrath-of-the-white-witch/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/ni-no-kuni-wrath-of-the-white-witch.webp"
   },
   {
     "title": "Party Animals",
@@ -338,7 +338,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/party-animals.md",
     "reviewUrl": "reviews/party-animals/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/party-animals.webp"
   },
   {
     "title": "Rogue Legacy 2",
@@ -349,7 +349,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/rogue-legacy-2.md",
     "reviewUrl": "reviews/rogue-legacy-2/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/rogue-legacy-2.webp"
   },
   {
     "title": "Siralim Ultimate",
@@ -360,7 +360,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/siralim-ultimate.md",
     "reviewUrl": "reviews/siralim-ultimate/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/siralim-ultimate.webp"
   },
   {
     "title": "SpongeBob SquarePants: Battle for Bikini Bottom Rehydrated",
@@ -371,7 +371,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/spongebob-battle-for-bikini-bottom-rehydrated.md",
     "reviewUrl": "reviews/spongebob-battle-for-bikini-bottom-rehydrated/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/spongebob-battle-for-bikini-bottom-rehydrated.webp"
   },
   {
     "title": "Stubbs the Zombie in Rebel Without a Pulse",
@@ -382,7 +382,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/stubbs-the-zombie.md",
     "reviewUrl": "reviews/stubbs-the-zombie/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/stubbs-the-zombie.webp"
   },
   {
     "title": "Tetris Effect: Connected",
@@ -393,7 +393,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/tetris-effect-connected.md",
     "reviewUrl": "reviews/tetris-effect-connected/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/tetris-effect-connected.webp"
   },
   {
     "title": "The Binding of Isaac: Rebirth",
@@ -404,7 +404,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/binding-of-isaac-rebirth.md",
     "reviewUrl": "reviews/binding-of-isaac-rebirth/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/binding-of-isaac-rebirth.webp"
   },
   {
     "title": "Vampire Survivors",
@@ -415,7 +415,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/vampire-survivors.md",
     "reviewUrl": "reviews/vampire-survivors/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/vampire-survivors.webp"
   },
   {
     "title": "World of Horror",
@@ -426,7 +426,7 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/world-of-horror.md",
     "reviewUrl": "reviews/world-of-horror/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/world-of-horror.webp"
   },
   {
     "title": "Zeepkist",
@@ -437,6 +437,6 @@
     "date": "July 2026",
     "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/zeepkist.md",
     "reviewUrl": "reviews/zeepkist/",
-    "coverUrl": ""
+    "coverUrl": "assets/covers/zeepkist.webp"
   }
 ]
