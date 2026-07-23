@@ -300,6 +300,16 @@
     "reviewUrl": "reviews/party-animals/"
   },
   {
+    "title": "Rogue Legacy 2",
+    "verdict": "Lost Track of Time",
+    "emoji": "🍇",
+    "store": "Steam",
+    "compatibilityLayer": "Proton",
+    "date": "July 2026",
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/rogue-legacy-2.md",
+    "reviewUrl": "reviews/rogue-legacy-2/"
+  },
+  {
     "title": "Siralim Ultimate",
     "verdict": "Worth Packing",
     "emoji": "🎒",

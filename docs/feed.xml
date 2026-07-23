@@ -5,7 +5,14 @@
     <link>https://smol-eggo.github.io/rp6-game-journal/</link>
     <description>Personal game reviews, handheld impressions, and Retroid Pocket 6 compatibility notes.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 21 Jul 2026 14:15:06 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 16:19:46 +0000</lastBuildDate>
+    <item>
+      <title>Rogue Legacy 2</title>
+      <link>https://smol-eggo.github.io/rp6-game-journal/reviews/rogue-legacy-2/</link>
+      <guid isPermaLink="true">https://smol-eggo.github.io/rp6-game-journal/reviews/rogue-legacy-2/</guid>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
+      <description>If the heir selection bug gets fixed, this would be close to a perfect handheld experience. Even with that quirk, Rogue Legacy 2 is an absolute joy to play…</description>
+    </item>
     <item>
       <title>Alice: Madness Returns</title>
       <link>https://smol-eggo.github.io/rp6-game-journal/reviews/alice-madness-returns/</link>
@@ -138,13 +145,6 @@
       <guid isPermaLink="true">https://smol-eggo.github.io/rp6-game-journal/reviews/final-fantasy-xiii/</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
       <description>Sometimes compatibility testing is very short. This was one of those times.</description>
-    </item>
-    <item>
-      <title>Gamble With Friends</title>
-      <link>https://smol-eggo.github.io/rp6-game-journal/reviews/gamble-with-friends/</link>
-      <guid isPermaLink="true">https://smol-eggo.github.io/rp6-game-journal/reviews/gamble-with-friends/</guid>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
-      <description>You can't really review a multiplayer game when your biggest opponent is the connection screen. Hopefully this is something future updates can solve.</description>
     </item>
   </channel>
 </rss>
