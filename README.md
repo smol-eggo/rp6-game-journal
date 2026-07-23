@@ -1,4 +1,4 @@
-# 🍇 Retroid Pocket 6 Game Journal
+# 🥚 Retroid Pocket 6 Game Journal
 > *Life's too short to spend it staring at an FPS counter.*
 
 A compatibility journal focused on playing games,
