@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="The page could not be found. Eggo may have packed the wrong cartridge."
+  >
+
+  <title>404 · RP6 Game Journal</title>
+
+  <link rel="stylesheet" href="./style.css">
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="RP6 Game Journal RSS Feed"
+    href="./feed.xml"
+  >
+
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 2rem 0;
+    }
+
+    .error-card {
+      width: min(880px, 100%);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      background:
+        radial-gradient(circle at top right, rgba(185,108,255,.18), transparent 24rem),
+        var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .error-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      gap: 2rem;
+      align-items: center;
+      padding: clamp(1.5rem, 5vw, 3.5rem);
+    }
+
+    .error-code {
+      margin: 0 0 .5rem;
+      color: #d7a9ff;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .error-title {
+      margin: 0;
+      max-width: 12ch;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: .95;
+      letter-spacing: -.05em;
+    }
+
+    .error-copy {
+      max-width: 38rem;
+      margin: 1.25rem 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    .error-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 1.6rem;
+    }
+
+    .error-eggo-wrap {
+      position: relative;
+      min-height: 250px;
+      display: grid;
+      place-items: center;
+    }
+
+    .error-eggo-wrap::before {
+      content: "?";
+      position: absolute;
+      right: .25rem;
+      top: -.75rem;
+      color: var(--accent);
+      opacity: .22;
+      font-size: 10rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .error-eggo {
+      transform: scale(1.25);
+    }
+
+    .eggo-map {
+      position: absolute;
+      left: 34px;
+      top: 78px;
+      width: 50px;
+      height: 38px;
+      z-index: 4;
+      border: 2px solid rgba(72,44,84,.55);
+      border-radius: .35rem;
+      background:
+        linear-gradient(90deg, transparent 32%, rgba(141,61,224,.22) 33% 36%, transparent 37%),
+        linear-gradient(#fff7cf, #eadf9f);
+      rotate: 7deg;
+      box-shadow: 0 8px 12px rgba(0,0,0,.2);
+    }
+
+    .eggo-map::after {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border-top: 2px dashed rgba(141,61,224,.65);
+      border-bottom: 2px dashed rgba(141,61,224,.45);
+      rotate: -8deg;
+    }
+
+    .error-caption {
+      position: absolute;
+      bottom: .35rem;
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+      font-style: italic;
+    }
+
+    .suggestions {
+      padding: 0 clamp(1.5rem, 5vw, 3.5rem) clamp(1.5rem, 5vw, 3.5rem);
+    }
+
+    .suggestions-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: end;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .suggestions-heading h2 {
+      margin: .25rem 0 0;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+    }
+
+    .suggestions-heading p {
+      margin: 0;
+      max-width: 28rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .error-review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .error-review-card {
+      overflow: hidden;
+      min-width: 0;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      background: rgba(255,255,255,.035);
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .error-review-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(205,172,255,.55);
+    }
+
+    .error-review-card a {
+      display: block;
+      height: 100%;
+      padding: 1rem;
+      text-decoration: none;
+    }
+
+    .error-review-card h3 {
+      margin: .55rem 0 .4rem;
+      font-size: 1.05rem;
+    }
+
+    .error-review-card p {
+      margin: 0;
+      color: #dfb4ff;
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .error-footer-note {
+      margin: 1.4rem 0 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 700px) {
+      .error-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .error-eggo-wrap {
+        min-height: 220px;
+      }
+
+      .suggestions-heading {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .error-review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .error-actions > * {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const normalizeUrl = (url) => {
+        if (!url) return "./";
+        return url.startsWith("http") || url.startsWith("/")
+          ? url
+          : `./${url}`;
+      };
+
+      const shuffle = (items) => {
+        const copy = [...items];
+
+        for (let index = copy.length - 1; index > 0; index -= 1) {
+          const randomIndex = Math.floor(Math.random() * (index + 1));
+          [copy[index], copy[randomIndex]] = [copy[randomIndex], copy[index]];
+        }
+
+        return copy;
+      };
+
+      async function loadSuggestions() {
+        const grid = document.querySelector("#error-review-grid");
+        if (!grid) return;
+
+        try {
+          const response = await fetch("./games.json", { cache: "no-store" });
+
+          if (!response.ok) {
+            throw new Error(`games.json returned ${response.status}`);
+          }
+
+          const games = await response.json();
+
+          if (!Array.isArray(games) || games.length === 0) {
+            throw new Error("games.json did not contain any games");
+          }
+
+          const suggestions = shuffle(
+            games.filter((game) => game.title)
+          ).slice(0, 3);
+
+          grid.replaceChildren();
+
+          suggestions.forEach((game) => {
+            const card = document.createElement("article");
+            card.className = "error-review-card";
+
+            const link = document.createElement("a");
+            link.href = normalizeUrl(game.reviewUrl || game.url);
+
+            const verdict = document.createElement("p");
+            verdict.textContent = `${game.emoji || "🎮"} ${game.verdict || "From the journal"}`;
+
+            const title = document.createElement("h3");
+            title.textContent = game.title;
+
+            link.append(verdict, title);
+            card.append(link);
+            grid.append(card);
+          });
+        } catch (error) {
+          console.error(error);
+
+          grid.innerHTML = `
+            <article class="error-review-card">
+              <a href="./">
+                <p>🎮 Back to base camp</p>
+                <h3>Browse the complete journal</h3>
+              </a>
+            </article>
+          `;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", loadSuggestions);
+    })();
+  </script>
+</head>
+
+<body>
+  <main class="container error-page">
+    <section class="error-card" aria-labelledby="error-title">
+      <div class="error-hero">
+        <div>
+          <p class="error-code">Error 404</p>
+
+          <h1 class="error-title" id="error-title">
+            Looks like Eggo packed the wrong cartridge.
+          </h1>
+
+          <p class="error-copy">
+            The page you were looking for is not in this backpack. The link may
+            be old, the review may have moved, or Eggo may be reading the map
+            upside down again.
+          </p>
+
+          <div class="error-actions">
+            <a class="primary-link" href="./">
+              Browse the journal
+            </a>
+
+            <a
+              class="secondary-link"
+              href="https://github.com/smol-eggo/rp6-game-journal/discussions/categories/game-requests"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Suggest a game
+            </a>
+          </div>
+        </div>
+
+        <div class="error-eggo-wrap" aria-hidden="true">
+          <div class="eggo error-eggo">
+            <span class="eggo-arm eggo-arm-left"></span>
+            <span class="eggo-arm eggo-arm-right"></span>
+
+            <span class="eggo-body">
+              <span class="eggo-glasses">
+                <span class="eggo-lens eggo-lens-left"></span>
+                <span class="eggo-lens eggo-lens-right"></span>
+              </span>
+
+              <span class="eggo-mouth"></span>
+              <span class="eggo-shine"></span>
+              <span class="eggo-map"></span>
+            </span>
+
+            <span class="eggo-foot eggo-foot-left"></span>
+            <span class="eggo-foot eggo-foot-right"></span>
+          </div>
+
+          <p class="error-caption">“I was sure it was this way.”</p>
+        </div>
+      </div>
+
+      <div class="suggestions">
+        <div class="suggestions-heading">
+          <div>
+            <p class="section-kicker">A better trail</p>
+            <h2>Maybe one of these instead?</h2>
+          </div>
+
+          <p>
+            Three random reviews from the handheld shelf, freshly shuffled on
+            every visit.
+          </p>
+        </div>
+
+        <div class="error-review-grid" id="error-review-grid" aria-live="polite">
+          <p class="message">Eggo is checking the backpack…</p>
+        </div>
+
+        <p class="error-footer-note">
+          Compatibility isn’t just about FPS. Apparently it is also about
+          remembering where the pages are.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
