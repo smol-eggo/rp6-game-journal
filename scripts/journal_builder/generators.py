@@ -23,7 +23,7 @@ from .config import (
 )
 from .models import GameReview
 from .parser import load_reviews
-from .templates import review_page, reviews_index
+from .templates import review_page
 
 
 def write_text(path: Path, content: str) -> None:
@@ -32,15 +32,7 @@ def write_text(path: Path, content: str) -> None:
 
 
 def generate_games_json(reviews: list[GameReview]) -> None:
-    """
-    Preserve the original homepage data contract.
-
-    Existing keys remain unchanged:
-    title, verdict, emoji, store, compatibilityLayer, date, url
-
-    reviewUrl is additive, so current journal.js code can safely ignore it
-    until you are ready to link cards to the generated review pages.
-    """
+    """Generate the homepage data while preserving the existing data contract."""
     games = []
     for review in reviews:
         encoded_filename = quote(review.source_filename)
@@ -52,17 +44,29 @@ def generate_games_json(reviews: list[GameReview]) -> None:
                 "store": review.store,
                 "compatibilityLayer": review.compatibility_layer,
                 "date": review.review_date_display,
-                "url": (
-                    f"{REPOSITORY_BLOB_URL}/games/{encoded_filename}"
-                ),
+                "url": f"{REPOSITORY_BLOB_URL}/games/{encoded_filename}",
                 "reviewUrl": f"reviews/{review.slug}/",
             }
         )
 
-    write_text(
-        GAMES_JSON,
-        json.dumps(games, ensure_ascii=False, indent=2),
-    )
+    write_text(GAMES_JSON, json.dumps(games, ensure_ascii=False, indent=2))
+
+
+def reviews_redirect() -> str:
+    """Keep old /reviews/ links useful without maintaining a duplicate archive."""
+    return """<!doctype html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"utf-8\">
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+  <meta http-equiv=\"refresh\" content=\"0; url=../\">
+  <link rel=\"canonical\" href=\"../\">
+  <title>Back to the RP6 Game Journal</title>
+</head>
+<body>
+  <p>The review archive now lives on the homepage. <a href=\"../\">Go to the journal</a>.</p>
+</body>
+</html>"""
 
 
 def generate_review_pages(reviews: list[GameReview]) -> None:
@@ -71,41 +75,28 @@ def generate_review_pages(reviews: list[GameReview]) -> None:
         shutil.rmtree(REVIEWS_DIR)
     REVIEWS_DIR.mkdir(parents=True, exist_ok=True)
 
-    write_text(REVIEWS_DIR / "index.html", reviews_index(reviews))
+    # /reviews/ is intentionally only a redirect. The homepage is the archive.
+    write_text(REVIEWS_DIR / "index.html", reviews_redirect())
 
     for index, review in enumerate(reviews):
         previous_review = reviews[index - 1] if index > 0 else None
-        next_review = (
-            reviews[index + 1]
-            if index + 1 < len(reviews)
-            else None
-        )
+        next_review = reviews[index + 1] if index + 1 < len(reviews) else None
         output = REVIEWS_DIR / review.slug / "index.html"
-        write_text(
-            output,
-            review_page(review, previous_review, next_review),
-        )
+        write_text(output, review_page(review, previous_review, next_review))
 
 
 def generate_sitemap(reviews: list[GameReview]) -> None:
-    entries = [
-        (f"{SITE_URL}/", None),
-        (f"{SITE_URL}/reviews/", None),
-    ]
+    # Do not list /reviews/ separately because it redirects to the homepage.
+    entries = [(f"{SITE_URL}/", None)]
     entries.extend(
-        (
-            f"{SITE_URL}{review.relative_url}",
-            review.review_date_iso,
-        )
+        (f"{SITE_URL}{review.relative_url}", review.review_date_iso)
         for review in reviews
     )
 
     url_nodes = []
     for url, modified in entries:
         lastmod = (
-            f"\n    <lastmod>{xml_escape(modified)}</lastmod>"
-            if modified
-            else ""
+            f"\n    <lastmod>{xml_escape(modified)}</lastmod>" if modified else ""
         )
         url_nodes.append(
             "  <url>\n"
@@ -137,13 +128,10 @@ def generate_feed(reviews: list[GameReview]) -> None:
         link = f"{SITE_URL}{review.relative_url}"
         pub_date = ""
         if review.review_date_iso:
-            parsed = datetime.strptime(
-                review.review_date_iso,
-                "%Y-%m-%d",
-            ).replace(tzinfo=timezone.utc)
-            pub_date = (
-                f"\n      <pubDate>{format_datetime(parsed)}</pubDate>"
+            parsed = datetime.strptime(review.review_date_iso, "%Y-%m-%d").replace(
+                tzinfo=timezone.utc
             )
+            pub_date = f"\n      <pubDate>{format_datetime(parsed)}</pubDate>"
 
         items.append(
             "    <item>\n"
@@ -190,6 +178,6 @@ def build_site() -> None:
 
     print(
         "Generated "
-        f"{len(reviews)} review pages, games.json, sitemap.xml, "
-        "feed.xml, and robots.txt."
+        f"{len(reviews)} review pages, homepage data, /reviews/ redirect, "
+        "sitemap.xml, feed.xml, and robots.txt."
     )

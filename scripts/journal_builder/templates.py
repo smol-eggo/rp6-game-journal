@@ -2,108 +2,46 @@ from __future__ import annotations
 
 import html
 import json
-from collections.abc import Iterable
 
 from .config import SITE_DESCRIPTION, SITE_NAME, SITE_URL
 from .models import GameReview
 
 
-def e(value: object) -> str:
-    """Escape a value before placing it in generated HTML."""
-    return html.escape(str(value), quote=True)
+def _value(review: GameReview, name: str, default: str = "") -> str:
+    value = getattr(review, name, default)
+    return str(value) if value is not None else default
 
 
-def page_shell(
-    *,
-    title: str,
-    description: str,
-    canonical_url: str,
-    body: str,
-    stylesheet_path: str,
-    page_type: str = "website",
-    json_ld: dict | None = None,
-) -> str:
-    """Render the shared document shell used by generated journal pages."""
-    structured_data = ""
+def _eggo() -> str:
+    return """<div class="review-eggo" aria-hidden="true">
+  <span class="review-eggo-arm review-eggo-arm-left"></span>
+  <span class="review-eggo-arm review-eggo-arm-right"></span>
+  <span class="review-eggo-body">
+    <span class="review-eggo-glasses">
+      <span class="review-eggo-lens"></span>
+      <span class="review-eggo-lens"></span>
+    </span>
+    <span class="review-eggo-mouth"></span>
+  </span>
+  <span class="review-eggo-foot review-eggo-foot-left"></span>
+  <span class="review-eggo-foot review-eggo-foot-right"></span>
+</div>"""
 
-    if json_ld is not None:
-        safe_json = json.dumps(
-            json_ld,
-            ensure_ascii=False,
-            separators=(",", ":"),
-        ).replace("</", "<\\/")
 
-        structured_data = (
-            '\n  <script type="application/ld+json">'
-            f"{safe_json}</script>"
-        )
+def _navigation_card(review: GameReview | None, label: str, direction: str) -> str:
+    if review is None:
+        return '<span class="review-nav-card review-nav-card-empty" aria-hidden="true"></span>'
 
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>{e(title)}</title>
-  <meta name="description" content="{e(description)}">
-  <meta name="theme-color" content="#100d18">
-
-  <link rel="canonical" href="{e(canonical_url)}">
-  <link rel="stylesheet" href="{e(stylesheet_path)}">
-  <link
-    rel="alternate"
-    type="application/rss+xml"
-    title="{e(SITE_NAME)} RSS"
-    href="{e(SITE_URL)}/feed.xml"
-  >
-
-  <meta property="og:type" content="{e(page_type)}">
-  <meta property="og:site_name" content="{e(SITE_NAME)}">
-  <meta property="og:title" content="{e(title)}">
-  <meta property="og:description" content="{e(description)}">
-  <meta property="og:url" content="{e(canonical_url)}">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{e(title)}">
-  <meta name="twitter:description" content="{e(description)}">
-  {structured_data}
-</head>
-<body>
-  <a class="skip-link" href="#main-content">Skip to the review</a>
-  <div class="reading-progress" aria-hidden="true">
-    <span class="reading-progress-bar"></span>
-  </div>
-
-{body}
-
-  <script>
-    (() => {{
-      const progressBar = document.querySelector(".reading-progress-bar");
-
-      if (!progressBar) {{
-        return;
-      }}
-
-      const updateProgress = () => {{
-        const scrollable =
-          document.documentElement.scrollHeight - window.innerHeight;
-
-        const progress =
-          scrollable > 0
-            ? Math.min(window.scrollY / scrollable, 1)
-            : 0;
-
-        progressBar.style.transform = `scaleX(${{progress}})`;
-      }};
-
-      updateProgress();
-      window.addEventListener("scroll", updateProgress, {{ passive: true }});
-      window.addEventListener("resize", updateProgress);
-    }})();
-  </script>
-</body>
-</html>
-"""
+    title = html.escape(_value(review, "title"))
+    emoji = html.escape(_value(review, "emoji", "🎮"))
+    verdict = html.escape(_value(review, "verdict"))
+    url = html.escape(_value(review, "relative_url", f"/reviews/{_value(review, 'slug')}/"))
+    arrow = "←" if direction == "previous" else "→"
+    return f"""<a class="review-nav-card review-nav-card-{direction}" href="{url}">
+  <span class="review-nav-label">{arrow} {label}</span>
+  <strong>{title}</strong>
+  <span>{emoji} {verdict}</span>
+</a>"""
 
 
 def review_page(
@@ -111,296 +49,120 @@ def review_page(
     previous_review: GameReview | None,
     next_review: GameReview | None,
 ) -> str:
-    """Render one complete game-review page."""
-    canonical = f"{SITE_URL}{review.relative_url}"
+    title = html.escape(_value(review, "title"))
+    verdict = html.escape(_value(review, "verdict"))
+    emoji = html.escape(_value(review, "emoji", "🎮"))
+    description = html.escape(_value(review, "description", SITE_DESCRIPTION))
+    store = html.escape(_value(review, "store", "Unknown"))
+    layer = html.escape(_value(review, "compatibility_layer", "Not recorded"))
+    date_display = html.escape(_value(review, "review_date_display", "Date not recorded"))
+    relative_url = _value(review, "relative_url", f"/reviews/{_value(review, 'slug')}/")
+    canonical = f"{SITE_URL}{relative_url}"
+    content = _value(review, "html_content") or _value(review, "content_html") or _value(review, "body_html")
 
-    if review.review_date_iso:
-        date_meta = (
-            f'<time datetime="{e(review.review_date_iso)}">'
-            f"{e(review.review_date_display)}</time>"
-        )
-    else:
-        date_meta = e(review.review_date_display)
+    if not content:
+        content = f"<p>{description}</p>"
 
-    facts = [
-        ("Device", review.device),
-        ("Operating system", review.operating_system),
-        ("Store", review.store),
-        ("Compatibility layer", review.compatibility_layer),
-    ]
+    structured_data = {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        "name": title,
+        "description": description,
+        "url": canonical,
+        "author": {"@type": "Person", "name": "smol-eggo"},
+        "itemReviewed": {"@type": "VideoGame", "name": title},
+    }
 
-    fact_html = "\n".join(
-        f"""
-        <div class="setup-item">
-          <dt>{e(label)}</dt>
-          <dd>{e(value)}</dd>
-        </div>
-        """
-        for label, value in facts
-    )
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{description}">
+  <link rel="canonical" href="{html.escape(canonical)}">
+  <link rel="stylesheet" href="../../assets/review-pages.css">
+  <title>{title} review | {html.escape(SITE_NAME)}</title>
+  <script type="application/ld+json">{json.dumps(structured_data, ensure_ascii=False)}</script>
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
 
-    previous_link = (
-        f"""
-        <a
-          class="review-nav-link review-nav-previous"
-          href="../{e(previous_review.slug)}/"
-          rel="prev"
-        >
-          <span class="review-nav-direction">← Previous review</span>
-          <strong>{e(previous_review.title)}</strong>
-          <small>
-            {e(previous_review.emoji)} {e(previous_review.verdict)}
-          </small>
-        </a>
-        """
-        if previous_review
-        else '<span class="review-nav-placeholder" aria-hidden="true"></span>'
-    )
-
-    next_link = (
-        f"""
-        <a
-          class="review-nav-link review-nav-next"
-          href="../{e(next_review.slug)}/"
-          rel="next"
-        >
-          <span class="review-nav-direction">Next review →</span>
-          <strong>{e(next_review.title)}</strong>
-          <small>
-            {e(next_review.emoji)} {e(next_review.verdict)}
-          </small>
-        </a>
-        """
-        if next_review
-        else '<span class="review-nav-placeholder" aria-hidden="true"></span>'
-    )
-
-    body = f"""
-  <header class="site-header">
-    <a class="brand" href="../../" aria-label="{e(SITE_NAME)} home">
-      <span class="brand-mark" aria-hidden="true">🍇</span>
-      <span>{e(SITE_NAME)}</span>
-    </a>
-
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a href="../">All reviews</a>
-      <a href="../../feed.xml">RSS</a>
-    </nav>
+  <header class="review-site-header">
+    <a class="back-link" href="../../">← Back to the journal</a>
+    <span class="review-site-name">{html.escape(SITE_NAME)}</span>
   </header>
 
-  <main id="main-content" class="review-layout">
+  <main class="review-shell">
     <article class="review-article">
       <header class="review-hero">
-        <a class="back-link" href="../">← Back to all reviews</a>
-
-        <div class="review-kicker">
-          <span>Game review</span>
-          <span aria-hidden="true">·</span>
-          <span>{date_meta}</span>
-        </div>
-
-        <h1>{e(review.title)}</h1>
-
-        <div class="verdict-badge">
-          <span class="verdict-emoji" aria-hidden="true">
-            {e(review.emoji)}
-          </span>
-          <span>
-            <small>smol-eggo's verdict</small>
-            <strong>{e(review.verdict)}</strong>
-          </span>
-        </div>
-
-        <p class="review-description">{e(review.description)}</p>
+        <p class="review-kicker">RP6 field report</p>
+        <h1>{title}</h1>
+        <p class="review-verdict">{emoji} {verdict}</p>
+        <p class="review-description">{description}</p>
+        <p class="review-date">Reviewed {date_display}</p>
       </header>
 
-      <section class="compatibility-panel" aria-labelledby="setup-heading">
-        <div class="compatibility-heading">
-          <div>
-            <p class="section-label">Handheld compatibility</p>
-            <h2 id="setup-heading">RP6 test setup</h2>
-          </div>
-
-          <p class="compatibility-verdict">
-            <span aria-hidden="true">{e(review.emoji)}</span>
-            {e(review.verdict)}
-          </p>
+      <section class="compatibility-panel" aria-labelledby="setup-title">
+        <div>
+          <p class="panel-kicker">Test setup</p>
+          <h2 id="setup-title">RP6 compatibility</h2>
         </div>
-
-        <dl class="test-setup">
-          {fact_html}
+        <dl>
+          <div><dt>Device</dt><dd>Retroid Pocket 6</dd></div>
+          <div><dt>OS</dt><dd>Armada</dd></div>
+          <div><dt>Store</dt><dd>{store}</dd></div>
+          <div><dt>Compatibility layer</dt><dd>{layer}</dd></div>
         </dl>
       </section>
 
-      <div class="article-divider" aria-hidden="true">
-        <span>🍇</span>
-      </div>
-
       <div class="review-content">
-        {review.rendered_html}
+        {content}
       </div>
 
-      <footer class="article-ending">
-        <div class="article-ending-mark" aria-hidden="true">🍇</div>
+      <aside class="testing-answer">
+        {_eggo()}
+        <div>
+          <p class="panel-kicker">The question behind every review</p>
+          <h2>Did I forget I was testing?</h2>
+          <p>The verdict above is the answer. Compatibility matters most when the hardware fades into the background.</p>
+        </div>
+      </aside>
 
-        <p class="section-label">Filed in the journal</p>
-        <h2>Compatibility doesn't matter if you forgot you were testing.</h2>
-
-        <p>
-          Reviewed by <strong>smol-eggo</strong>
-          <span aria-hidden="true">·</span>
-          {date_meta}
-        </p>
-
-        <a class="source-link" href="../../">
-          Return to the journal
-        </a>
-      </footer>
+      <nav class="review-navigation" aria-label="More reviews">
+        {_navigation_card(previous_review, "Previous review", "previous")}
+        {_navigation_card(next_review, "Next review", "next")}
+      </nav>
     </article>
 
-    <nav class="review-navigation" aria-label="Adjacent reviews">
-      {previous_link}
-      {next_link}
-    </nav>
+    <aside class="home-rail">
+      {_eggo()}
+      <h2>You’re heading the right way.</h2>
+      <p>The homepage now contains the complete searchable journal.</p>
+      <a href="../../">Browse every review →</a>
+    </aside>
   </main>
 
-  <footer class="site-footer">
-    <p>Eggo is always looking for the next adventure.</p>
-    <div class="footer-links">
-      <a href="../">Browse all reviews</a>
-      <a href="../../feed.xml">Follow via RSS</a>
-    </div>
-  </footer>
-"""
-
-    json_ld: dict[str, object] = {
-        "@context": "https://schema.org",
-        "@type": "Review",
-        "name": f"{review.title} review",
-        "url": canonical,
-        "description": review.description,
-        "author": {
-            "@type": "Person",
-            "name": "smol-eggo",
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": SITE_NAME,
-            "url": f"{SITE_URL}/",
-        },
-        "itemReviewed": {
-            "@type": "VideoGame",
-            "name": review.title,
-        },
-        "reviewBody": review.description,
-    }
-
-    if review.review_date_iso:
-        json_ld["datePublished"] = review.review_date_iso
-        json_ld["dateModified"] = review.review_date_iso
-
-    return page_shell(
-        title=f"{review.title} review | {SITE_NAME}",
-        description=review.description,
-        canonical_url=canonical,
-        body=body,
-        stylesheet_path="../../assets/review-pages.css",
-        page_type="article",
-        json_ld=json_ld,
-    )
-
-
-def reviews_index(reviews: Iterable[GameReview]) -> str:
-    """Render the generated archive containing every review."""
-    review_list = list(reviews)
-    cards: list[str] = []
-
-    for review in review_list:
-        cards.append(
-            f"""
-        <article class="review-card">
-          <a class="review-card-link" href="{e(review.slug)}/">
-            <div class="review-card-topline">
-              <p class="card-verdict">
-                <span aria-hidden="true">{e(review.emoji)}</span>
-                {e(review.verdict)}
-              </p>
-              <span class="card-arrow" aria-hidden="true">↗</span>
-            </div>
-
-            <h2>{e(review.title)}</h2>
-            <p class="review-card-description">
-              {e(review.description)}
-            </p>
-
-            <div class="card-meta">
-              <span>{e(review.store)}</span>
-              <span>{e(review.review_date_display)}</span>
-            </div>
-          </a>
-        </article>
-        """
-        )
-
-    review_word = "review" if len(review_list) == 1 else "reviews"
-
-    body = f"""
-  <header class="site-header">
-    <a class="brand" href="../" aria-label="{e(SITE_NAME)} home">
-      <span class="brand-mark" aria-hidden="true">🍇</span>
-      <span>{e(SITE_NAME)}</span>
-    </a>
-
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a aria-current="page" href="./">All reviews</a>
-      <a href="../feed.xml">RSS</a>
+  <footer class="review-footer">
+    <p>An independent community project by smol-eggo.</p>
+    <nav aria-label="Footer links">
+      <a href="../../feed.xml">RSS</a>
+      <a href="../../sitemap.xml">Sitemap</a>
+      <a href="../../">Back to top</a>
     </nav>
-  </header>
-
-  <main id="main-content" class="index-layout">
-    <header class="index-hero">
-      <p class="section-label">The complete shelf</p>
-      <h1>Game reviews</h1>
-      <p>{e(SITE_DESCRIPTION)}</p>
-
-      <div class="archive-count">
-        <strong>{len(review_list)}</strong>
-        <span>{review_word} currently in the journal</span>
-      </div>
-    </header>
-
-    <section class="review-grid" aria-label="All game reviews">
-      {''.join(cards)}
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>Compatibility doesn't matter if you forgot you were testing.</p>
-    <div class="footer-links">
-      <a href="../">Return to the journal</a>
-      <a href="../feed.xml">Follow via RSS</a>
-    </div>
   </footer>
-"""
 
-    return page_shell(
-        title=f"Game reviews | {SITE_NAME}",
-        description=SITE_DESCRIPTION,
-        canonical_url=f"{SITE_URL}/reviews/",
-        body=body,
-        stylesheet_path="../assets/review-pages.css",
-        page_type="website",
-        json_ld={
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            "name": "Game reviews",
-            "url": f"{SITE_URL}/reviews/",
-            "description": SITE_DESCRIPTION,
-            "isPartOf": {
-                "@type": "WebSite",
-                "name": SITE_NAME,
-                "url": f"{SITE_URL}/",
-            },
-            "numberOfItems": len(review_list),
-        },
-    )
+  <script>
+    (() => {{
+      const bar = document.querySelector('#reading-progress-bar');
+      const update = () => {{
+        const height = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = height > 0 ? window.scrollY / height : 0;
+        bar.style.transform = `scaleX(${{Math.min(1, Math.max(0, progress))}})`;
+      }};
+      update();
+      addEventListener('scroll', update, {{ passive: true }});
+      addEventListener('resize', update);
+    }})();
+  </script>
+</body>
+</html>"""
