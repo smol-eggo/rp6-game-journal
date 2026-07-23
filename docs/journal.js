@@ -61,6 +61,19 @@
     link.href = normalizeUrl(game.reviewUrl || game.url);
     link.setAttribute("aria-label", `Read the ${game.title} review`);
 
+    if (game.coverUrl) {
+      const cover = document.createElement("img");
+      cover.className = "game-card-cover";
+      cover.src = normalizeUrl(game.coverUrl);
+      cover.alt = `Cover art for ${game.title}`;
+      cover.loading = "lazy";
+      cover.decoding = "async";
+      link.append(cover);
+    }
+
+    const cardBody = document.createElement("div");
+    cardBody.className = "game-card-body";
+
     const verdict = document.createElement("p");
     verdict.className = "verdict";
     verdict.textContent = `${game.emoji || "🎮"} ${game.verdict}`;
@@ -76,7 +89,8 @@
     read.className = "card-read-more";
     read.textContent = "Read review →";
 
-    link.append(verdict, title, details, read);
+    cardBody.append(verdict, title, details, read);
+    link.append(cardBody);
     article.append(link);
     return article;
   }
@@ -126,6 +140,26 @@
     elements.featuredVerdict.textContent = `${game.emoji || "🎮"} ${game.verdict}`;
     elements.featuredDetails.textContent = [game.store, game.compatibilityLayer, game.date].filter(Boolean).join(" · ");
     elements.featuredLink.href = target;
+
+    const decoration = elements.featuredSection.querySelector(".featured-decoration");
+    const deviceImage = decoration?.querySelector(".featured-device-image");
+    let coverImage = decoration?.querySelector(".featured-cover-image");
+
+    if (game.coverUrl && decoration) {
+      if (!coverImage) {
+        coverImage = document.createElement("img");
+        coverImage.className = "featured-cover-image";
+        decoration.prepend(coverImage);
+      }
+      coverImage.src = normalizeUrl(game.coverUrl);
+      coverImage.alt = `Cover art for ${game.title}`;
+      coverImage.hidden = false;
+      if (deviceImage) deviceImage.hidden = true;
+    } else {
+      if (coverImage) coverImage.hidden = true;
+      if (deviceImage) deviceImage.hidden = false;
+    }
+
     elements.featuredSection.hidden = false;
   }
 

@@ -111,3 +111,27 @@ h1 { margin: .45rem 0 1rem; font-size: clamp(2.8rem, 8vw, 5.8rem); line-height: 
   .hero-actions > * { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* Optional automatic cover art */
+.game-card { overflow: hidden; }
+.game-card-link { padding: 0; }
+.game-card-body { padding: 1.25rem; }
+.game-card-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,.025);
+}
+.featured-cover-image {
+  width: min(84%, 390px);
+  max-height: 360px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid rgba(205,172,255,.28);
+  border-radius: 1.15rem;
+  box-shadow: 0 24px 55px rgba(0,0,0,.42);
+}
+.featured-cover-image[hidden],
+.featured-device-image[hidden] { display: none; }
