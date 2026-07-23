@@ -28,21 +28,21 @@ not benchmarking them.
 <!-- GAME-JOURNAL:START -->
 ## The journal so far
 
-**Games tested:** 40
+**Games tested:** 41
 
 🍇 **Lost Track of Time:** 17  
 ☕ **Just One More Run:** 7  
 🎒 **Worth Packing:** 3  
 🛠 **Needs Tinkering:** 3  
-🚧 **Leave at Home:** 10
+🚧 **Leave at Home:** 11
 
 ## Recently tested
 
+- 🚧 [**Disco Elysium**](games/disco-elysium.md) · Leave at Home · July 2026
 - 🚧 [**7 Days to Die**](games/7-days-to-die.md) · Leave at Home · July 2026
 - 🍇 [**Rogue Legacy 2**](games/rogue-legacy-2.md) · Lost Track of Time · July 2026
 - 🚧 [**Diablo II: Resurrected**](games/diablo-ii-resurrected.md) · Leave at Home · July 2026
 - 🍇 [**Stubbs the Zombie in Rebel Without a Pulse**](games/stubbs-the-zombie.md) · Lost Track of Time · July 2026
-- 🍇 [**Animal Well**](games/animal-well.md) · Lost Track of Time · July 2026
 
 *This section is updated automatically whenever the journal changes.*
 <!-- GAME-JOURNAL:END -->

@@ -143,6 +143,17 @@
     "coverUrl": "assets/covers/digimon-story-cyber-sleuth.webp"
   },
   {
+    "title": "Disco Elysium",
+    "verdict": "Leave at Home",
+    "emoji": "🚧",
+    "store": "Steam",
+    "compatibilityLayer": "Proton",
+    "date": "July 2026",
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/disco-elysium.md",
+    "reviewUrl": "reviews/disco-elysium/",
+    "coverUrl": "assets/covers/disco-elysium.webp"
+  },
+  {
     "title": "Dragon Quest XI S: Echoes of an Elusive Age",
     "verdict": "Needs Tinkering",
     "emoji": "🛠",

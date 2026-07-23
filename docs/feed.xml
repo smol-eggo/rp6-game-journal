@@ -5,13 +5,20 @@
     <link>https://smol-eggo.github.io/rp6-game-journal/</link>
     <description>Personal game reviews, handheld impressions, and Retroid Pocket 6 compatibility notes.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Jul 2026 18:06:31 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 20:58:43 +0000</lastBuildDate>
     <item>
       <title>7 Days to Die</title>
       <link>https://smol-eggo.github.io/rp6-game-journal/reviews/7-days-to-die/</link>
       <guid isPermaLink="true">https://smol-eggo.github.io/rp6-game-journal/reviews/7-days-to-die/</guid>
       <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
       <description>Until Easy Anti Cheat support changes, this one is staying on my desktop.</description>
+    </item>
+    <item>
+      <title>Disco Elysium</title>
+      <link>https://smol-eggo.github.io/rp6-game-journal/reviews/disco-elysium/</link>
+      <guid isPermaLink="true">https://smol-eggo.github.io/rp6-game-journal/reviews/disco-elysium/</guid>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Making it to the main menu doesn't count for much if starting a new game takes the whole handheld down with it. Until this is fixed, Disco Elysium is…</description>
     </item>
     <item>
       <title>Rogue Legacy 2</title>
@@ -138,13 +145,6 @@
       <guid isPermaLink="true">https://smol-eggo.github.io/rp6-game-journal/reviews/far-cry-3/</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
       <description>Don't judge this one by its opening minutes. Once you're free to explore, Far Cry 3 becomes a surprisingly enjoyable adventure on the RP6.</description>
-    </item>
-    <item>
-      <title>Final Fantasy X HD Remaster</title>
-      <link>https://smol-eggo.github.io/rp6-game-journal/reviews/final-fantasy-x-hd/</link>
-      <guid isPermaLink="true">https://smol-eggo.github.io/rp6-game-journal/reviews/final-fantasy-x-hd/</guid>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
-      <description>One of those games that simply belongs on a handheld.</description>
     </item>
   </channel>
 </rss>
