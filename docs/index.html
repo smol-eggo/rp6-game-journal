@@ -1,273 +1,208 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta
-    name="description"
-    content="A personal Retroid Pocket 6 game journal focused on the experience behind compatibility."
-  >
-  <title>RP6 Game Journal</title>
-  <link rel="stylesheet" href="./style.css">
-  <script src="./journal.js" defer></script>
-</head>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="A personal Retroid Pocket 6 game journal focused on the experience behind compatibility." name="description"/>
+<title>RP6 Game Journal</title>
+<link href="./style.css" rel="stylesheet"/>
+<script defer="" src="./journal.js"></script>
+<link href="./feed.xml" rel="alternate" title="RP6 Game Journal RSS Feed" type="application/rss+xml"/></head>
 <body>
-  <header class="site-header">
-    <div class="container hero-layout">
-      <div class="hero-copy">
-        <p class="eyebrow">Retroid Pocket 6 · Armada</p>
-
-        <h1>RP6 Game Journal</h1>
-
-        <p class="intro">
+<header class="site-header">
+<div class="container hero-layout">
+<div class="hero-copy">
+<p class="eyebrow">Retroid Pocket 6 · Armada</p>
+<h1>RP6 Game Journal</h1>
+<p class="intro">
           Compatibility isn’t just about FPS. It’s about forgetting you’re testing.
         </p>
-
-        <div class="hero-actions">
-          <a class="primary-link" href="#journal">
+<div class="hero-actions">
+<a class="primary-link" href="#journal">
             Browse the journal
           </a>
-
-          <a
-            class="secondary-link request-link"
-            href="https://github.com/smol-eggo/rp6-game-journal/discussions/categories/game-requests"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+<a class="secondary-link request-link" href="https://github.com/smol-eggo/rp6-game-journal/discussions/categories/game-requests" rel="noopener noreferrer" target="_blank">
             Suggest a game
           </a>
-
-          <a
-            class="secondary-link"
-            href="https://github.com/smol-eggo/rp6-game-journal"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+<a class="secondary-link" href="https://github.com/smol-eggo/rp6-game-journal" rel="noopener noreferrer" target="_blank">
             View on GitHub
           </a>
-        </div>
-      </div>
-
-      <aside class="hero-question" aria-label="The question behind every review">
-        <p class="hero-question-label">The question behind every review</p>
-        <p class="hero-question-text">Did I forget I was testing?</p>
-        <span class="hero-question-mark" aria-hidden="true">?</span>
-      </aside>
-    </div>
-  </header>
-
-  <main class="container">
-    <section class="statistics-section" aria-labelledby="statistics-title">
-      <div class="section-heading">
-        <div>
-          <p class="section-kicker">The journal so far</p>
-          <h2 id="statistics-title">A growing travel log</h2>
-        </div>
-
-        <p class="section-description">
+<a class="secondary-link rss-link" href="./feed.xml" rel="alternate" target="_blank" type="application/rss+xml">📡 RSS Feed</a></div><p class="hero-rss"><a href="./feed.xml" type="application/rss+xml">📡 Follow new reviews with RSS</a></p>
+</div>
+<aside aria-label="The question behind every review" class="hero-question">
+<p class="hero-question-label">The question behind every review</p>
+<p class="hero-question-text">Did I forget I was testing?</p>
+<span aria-hidden="true" class="hero-question-mark">?</span>
+</aside>
+</div>
+</header>
+<main class="container">
+<section aria-labelledby="statistics-title" class="statistics-section">
+<div class="section-heading">
+<div>
+<p class="section-kicker">The journal so far</p>
+<h2 id="statistics-title">A growing travel log</h2>
+</div>
+<p class="section-description">
           Every game tested gets a page, whether it becomes an obsession or
           refuses to leave the loading screen.
         </p>
-      </div>
-
-      <div class="statistics-grid">
-        <article class="stat-card stat-card-total">
-          <span class="stat-icon" aria-hidden="true">🎮</span>
-          <div>
-            <strong class="stat-number" id="stat-total" data-count="0">0</strong>
-            <span class="stat-label">Games tested</span>
-          </div>
-        </article>
-
-        <article class="stat-card">
-          <span class="stat-icon" aria-hidden="true">🍇</span>
-          <div>
-            <strong class="stat-number" id="stat-lost-track" data-count="0">0</strong>
-            <span class="stat-label">Lost track of time</span>
-          </div>
-        </article>
-
-        <article class="stat-card">
-          <span class="stat-icon" aria-hidden="true">🎒</span>
-          <div>
-            <strong class="stat-number" id="stat-packable" data-count="0">0</strong>
-            <span class="stat-label">Worth packing or better</span>
-          </div>
-        </article>
-
-        <article class="stat-card">
-          <span class="stat-icon" aria-hidden="true">🏠</span>
-          <div>
-            <strong class="stat-number" id="stat-leave-home" data-count="0">0</strong>
-            <span class="stat-label">Best left at home</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="featured-section" id="featured-section" hidden>
-      <div class="featured-copy">
-        <p class="section-kicker">Featured from the journal</p>
-        <p class="featured-verdict" id="featured-verdict"></p>
-
-        <h2>
-          <a id="featured-title" href="#"></a>
-        </h2>
-
-        <p class="featured-details" id="featured-details"></p>
-
-        <p class="featured-note">
+</div>
+<div class="statistics-grid">
+<article class="stat-card stat-card-total">
+<span aria-hidden="true" class="stat-icon">🎮</span>
+<div>
+<strong class="stat-number" data-count="0" id="stat-total">0</strong>
+<span class="stat-label">Games tested</span>
+</div>
+</article>
+<article class="stat-card">
+<span aria-hidden="true" class="stat-icon">🍇</span>
+<div>
+<strong class="stat-number" data-count="0" id="stat-lost-track">0</strong>
+<span class="stat-label">Lost track of time</span>
+</div>
+</article>
+<article class="stat-card">
+<span aria-hidden="true" class="stat-icon">🎒</span>
+<div>
+<strong class="stat-number" data-count="0" id="stat-packable">0</strong>
+<span class="stat-label">Worth packing or better</span>
+</div>
+</article>
+<article class="stat-card">
+<span aria-hidden="true" class="stat-icon">🏠</span>
+<div>
+<strong class="stat-number" data-count="0" id="stat-leave-home">0</strong>
+<span class="stat-label">Best left at home</span>
+</div>
+</article>
+</div>
+</section>
+<section class="featured-section" hidden="" id="featured-section">
+<div class="featured-copy">
+<p class="section-kicker">Featured from the journal</p>
+<p class="featured-verdict" id="featured-verdict"></p>
+<h2>
+<a href="#" id="featured-title"></a>
+</h2>
+<p class="featured-details" id="featured-details"></p>
+<p class="featured-note">
           A randomly selected favourite from the handheld shelf.
         </p>
-
-        <a class="featured-link" id="featured-link" href="#">
+<a class="featured-link" href="#" id="featured-link">
           Read the full review <span aria-hidden="true">→</span>
-        </a>
-      </div>
-
-      <div class="featured-decoration" aria-hidden="true">
-        <img
-          class="featured-device-image"
-          src="./assets/rp6-violet.png"
-          alt=""
-        >
-
-        <div class="eggo eggo-featured" data-eggo="featured" aria-hidden="true">
-          <span class="eggo-arm eggo-arm-left"></span>
-          <span class="eggo-arm eggo-arm-right"></span>
-          <span class="eggo-body">
-            <span class="eggo-glasses">
-              <span class="eggo-lens eggo-lens-left"></span>
-              <span class="eggo-lens eggo-lens-right"></span>
-            </span>
-            <span class="eggo-mouth"></span>
-            <span class="eggo-shine"></span>
-          </span>
-          <span class="eggo-foot eggo-foot-left"></span>
-          <span class="eggo-foot eggo-foot-right"></span>
-        </div>
-      </div>
-    </section>
-
-    <section class="controls" id="journal" aria-labelledby="journal-title">
-      <div class="controls-heading">
-        <div>
-          <p class="section-kicker">Find your next game</p>
-          <h2 id="journal-title">Browse the journal</h2>
-        </div>
-
-        <p>Search by game, store, compatibility layer, or verdict.</p>
-      </div>
-
-      <label for="search">Search the journal</label>
-
-      <div class="search-wrapper">
-        <span class="search-icon" aria-hidden="true">⌕</span>
-        <input
-          id="search"
-          type="search"
-          autocomplete="off"
-          placeholder="Try Animal Well, Steam, Proton…"
-        >
-      </div>
-
-      <div class="filter-list" aria-label="Filter by verdict">
-        <button class="filter active" type="button" data-verdict="all">
+</a>
+</div>
+<div aria-hidden="true" class="featured-decoration">
+<img alt="" class="featured-device-image" src="./assets/rp6-violet.png"/>
+<div aria-hidden="true" class="eggo eggo-featured" data-eggo="featured">
+<span class="eggo-arm eggo-arm-left"></span>
+<span class="eggo-arm eggo-arm-right"></span>
+<span class="eggo-body">
+<span class="eggo-glasses">
+<span class="eggo-lens eggo-lens-left"></span>
+<span class="eggo-lens eggo-lens-right"></span>
+</span>
+<span class="eggo-mouth"></span>
+<span class="eggo-shine"></span>
+</span>
+<span class="eggo-foot eggo-foot-left"></span>
+<span class="eggo-foot eggo-foot-right"></span>
+</div>
+</div>
+</section>
+<section aria-labelledby="journal-title" class="controls" id="journal">
+<div class="controls-heading">
+<div>
+<p class="section-kicker">Find your next game</p>
+<h2 id="journal-title">Browse the journal</h2>
+</div>
+<p>Search by game, store, compatibility layer, or verdict.</p>
+</div>
+<label for="search">Search the journal</label>
+<div class="search-wrapper">
+<span aria-hidden="true" class="search-icon">⌕</span>
+<input autocomplete="off" id="search" placeholder="Try Animal Well, Steam, Proton…" type="search"/>
+</div>
+<div aria-label="Filter by verdict" class="filter-list">
+<button class="filter active" data-verdict="all" type="button">
           All games
         </button>
-
-        <button class="filter" type="button" data-verdict="Lost Track of Time">
+<button class="filter" data-verdict="Lost Track of Time" type="button">
           🍇 Lost Track of Time
         </button>
-
-        <button class="filter" type="button" data-verdict="Just One More Run">
+<button class="filter" data-verdict="Just One More Run" type="button">
           ☕ Just One More Run
         </button>
-
-        <button class="filter" type="button" data-verdict="Worth Packing">
+<button class="filter" data-verdict="Worth Packing" type="button">
           🎒 Worth Packing
         </button>
-
-        <button class="filter" type="button" data-verdict="Needs Tinkering">
+<button class="filter" data-verdict="Needs Tinkering" type="button">
           🔧 Needs Tinkering
         </button>
-
-        <button class="filter" type="button" data-verdict="Leave at Home">
+<button class="filter" data-verdict="Leave at Home" type="button">
           🏠 Leave at Home
         </button>
-      </div>
-
-      <div class="result-bar">
-        <p id="result-count" aria-live="polite">Loading journal…</p>
-
-        <label for="sort">
+</div>
+<div class="result-bar">
+<p aria-live="polite" id="result-count">Loading journal…</p>
+<label for="sort">
           Sort
           <select id="sort">
-            <option value="alphabetical">A to Z</option>
-            <option value="verdict">Verdict</option>
-          </select>
-        </label>
-      </div>
-    </section>
-
-    <section class="game-grid" id="results" aria-live="polite">
-      <p class="message">Loading journal…</p>
-    </section>
-
-    <section class="community-section" aria-labelledby="community-title">
-      <div class="community-copy">
-        <p class="section-kicker">Join the journal</p>
-        <h2 id="community-title">What should go in the backpack next?</h2>
-
-        <p>
+<option value="alphabetical">A to Z</option>
+<option value="verdict">Verdict</option>
+</select>
+</label>
+</div>
+</section>
+<section aria-live="polite" class="game-grid" id="results">
+<p class="message">Loading journal…</p>
+</section>
+<section aria-labelledby="community-title" class="community-section">
+<div class="community-copy">
+<p class="section-kicker">Join the journal</p>
+<h2 id="community-title">What should go in the backpack next?</h2>
+<p>
           Have a game you would love to see tested on the Retroid Pocket 6?
           Drop it into the Game Requests discussion and tell us why it belongs
           on the handheld.
         </p>
-
-        <a
-          class="primary-link community-button"
-          href="https://github.com/smol-eggo/rp6-game-journal/discussions/categories/game-requests"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+<a class="primary-link community-button" href="https://github.com/smol-eggo/rp6-game-journal/discussions/categories/game-requests" rel="noopener noreferrer" target="_blank">
           Suggest a game
         </a>
-      </div>
-
-      <div class="community-eggo-wrap" aria-hidden="true">
-        <div class="eggo eggo-community" data-eggo="community" aria-hidden="true">
-          <span class="eggo-arm eggo-arm-left"></span>
-          <span class="eggo-arm eggo-arm-right"></span>
-          <span class="eggo-body">
-            <span class="eggo-glasses">
-              <span class="eggo-lens eggo-lens-left"></span>
-              <span class="eggo-lens eggo-lens-right"></span>
-            </span>
-            <span class="eggo-mouth"></span>
-            <span class="eggo-shine"></span>
-          </span>
-          <span class="eggo-foot eggo-foot-left"></span>
-          <span class="eggo-foot eggo-foot-right"></span>
-        </div>
-        <p class="eggo-caption">Eggo is always scouting for the next adventure.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-layout">
-      <p>An independent community project by smol-eggo.</p>
-      <p>Not officially affiliated with Retroid or Armada.</p>
-    </div>
-  </footer>
-
-  <noscript>
-    <p class="noscript-message">
+</div>
+<div aria-hidden="true" class="community-eggo-wrap">
+<div aria-hidden="true" class="eggo eggo-community" data-eggo="community">
+<span class="eggo-arm eggo-arm-left"></span>
+<span class="eggo-arm eggo-arm-right"></span>
+<span class="eggo-body">
+<span class="eggo-glasses">
+<span class="eggo-lens eggo-lens-left"></span>
+<span class="eggo-lens eggo-lens-right"></span>
+</span>
+<span class="eggo-mouth"></span>
+<span class="eggo-shine"></span>
+</span>
+<span class="eggo-foot eggo-foot-left"></span>
+<span class="eggo-foot eggo-foot-right"></span>
+</div>
+<p class="eggo-caption">Eggo is always scouting for the next adventure.</p>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-layout">
+<p>An independent community project by smol-eggo.</p>
+<p>Not officially affiliated with Retroid or Armada.</p>
+</div>
+</footer>
+<noscript>
+<p class="noscript-message">
       JavaScript is required for search and filtering. The reviews remain
       available in the GitHub repository.
     </p>
-  </noscript>
+</noscript>
 </body>
 </html>
