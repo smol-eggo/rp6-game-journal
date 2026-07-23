@@ -2,9 +2,18 @@ from __future__ import annotations
 
 import html
 import json
+import re
+from dataclasses import dataclass
 
 from .config import SITE_DESCRIPTION, SITE_NAME, SITE_URL
 from .models import GameReview
+
+
+@dataclass(frozen=True)
+class ReviewSections:
+    experience: str = ""
+    verdict: str = ""
+    did_i_forget: str = ""
 
 
 def _value(review: GameReview, name: str, default: str = "") -> str:
@@ -12,8 +21,104 @@ def _value(review: GameReview, name: str, default: str = "") -> str:
     return str(value) if value is not None else default
 
 
-def _eggo() -> str:
-    return """<div class="review-eggo" aria-hidden="true">
+def _plain_text(fragment: str) -> str:
+    text = re.sub(r"<[^>]+>", " ", fragment)
+    return " ".join(html.unescape(text).split())
+
+
+def _normalise_heading(fragment: str) -> str:
+    value = _plain_text(fragment).casefold()
+    value = value.replace("’", "'").replace("‘", "'")
+    value = re.sub(r"[^a-z0-9']+", " ", value)
+    return " ".join(value.split()).strip()
+
+
+def _clean_section(fragment: str) -> str:
+    """Remove generator-only tail copy while preserving the review's HTML."""
+    fragment = fragment.strip()
+    fragment = re.sub(
+        r"<p><em>\s*Reviewed by smol-eggo.*?</em></p>\s*$",
+        "",
+        fragment,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    fragment = re.sub(
+        r"<hr\s*/?>\s*$",
+        "",
+        fragment,
+        flags=re.IGNORECASE,
+    )
+    return fragment.strip()
+
+
+def _parse_review_sections(rendered_html: str) -> ReviewSections:
+    """Split the canonical Markdown review into the three page-level sections.
+
+    The hero and compatibility panel already own the title, score, and setup.
+    Only Experience is rendered in the article body. The written verdict and
+    testing answer are moved into the Eggo conclusion card.
+    """
+    if not rendered_html:
+        return ReviewSections()
+
+    heading_pattern = re.compile(
+        r"<h(?P<level>[1-6])(?:\s[^>]*)?>(?P<title>.*?)</h(?P=level)>",
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    matches = list(heading_pattern.finditer(rendered_html))
+    sections: dict[str, str] = {}
+
+    for index, match in enumerate(matches):
+        heading = _normalise_heading(match.group("title"))
+        start = match.end()
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(rendered_html)
+        body = _clean_section(rendered_html[start:end])
+
+        if heading == "experience":
+            sections["experience"] = body
+        elif heading in {"smol eggo's verdict", "smol-eggo's verdict", "smol eggo verdict"}:
+            sections["verdict"] = body
+        elif heading in {
+            "did i forget i was testing",
+            "did i forget i was testing?",
+        }:
+            sections["did_i_forget"] = body
+
+    # Safe fallback for older reviews that do not yet follow the canonical
+    # headings. Showing the full review is preferable to silently losing it.
+    experience = sections.get("experience", "")
+    if not experience:
+        experience = _clean_section(rendered_html)
+
+    return ReviewSections(
+        experience=experience,
+        verdict=sections.get("verdict", ""),
+        did_i_forget=sections.get("did_i_forget", ""),
+    )
+
+
+def _emotion_class(verdict: str) -> str:
+    verdict_key = verdict.casefold()
+    if "lost track" in verdict_key:
+        return "eggo-elated"
+    if "one more run" in verdict_key:
+        return "eggo-hyped"
+    if "worth packing" in verdict_key:
+        return "eggo-ready"
+    if "tinkering" in verdict_key:
+        return "eggo-thinking"
+    if "leave at home" in verdict_key:
+        return "eggo-worried"
+    return "eggo-neutral"
+
+
+def _eggo(verdict: str, extra_class: str = "") -> str:
+    classes = " ".join(
+        part for part in ("review-eggo", _emotion_class(verdict), extra_class) if part
+    )
+    return f"""<div class="{classes}" aria-hidden="true">
+  <span class="review-eggo-spark review-eggo-spark-one">✦</span>
+  <span class="review-eggo-spark review-eggo-spark-two">✦</span>
   <span class="review-eggo-arm review-eggo-arm-left"></span>
   <span class="review-eggo-arm review-eggo-arm-right"></span>
   <span class="review-eggo-body">
@@ -22,6 +127,8 @@ def _eggo() -> str:
       <span class="review-eggo-lens"></span>
     </span>
     <span class="review-eggo-mouth"></span>
+    <span class="review-eggo-cheek review-eggo-cheek-left"></span>
+    <span class="review-eggo-cheek review-eggo-cheek-right"></span>
   </span>
   <span class="review-eggo-foot review-eggo-foot-left"></span>
   <span class="review-eggo-foot review-eggo-foot-right"></span>
@@ -51,6 +158,7 @@ def review_page(
 ) -> str:
     title = html.escape(_value(review, "title"))
     verdict = html.escape(_value(review, "verdict"))
+    raw_verdict = _value(review, "verdict")
     emoji = html.escape(_value(review, "emoji", "🎮"))
     description = html.escape(_value(review, "description", SITE_DESCRIPTION))
     store = html.escape(_value(review, "store", "Unknown"))
@@ -58,28 +166,27 @@ def review_page(
     date_display = html.escape(_value(review, "review_date_display", "Date not recorded"))
     relative_url = _value(review, "relative_url", f"/reviews/{_value(review, 'slug')}/")
     canonical = f"{SITE_URL}{relative_url}"
-    # The parser stores the complete rendered Markdown in ``rendered_html``.
-    # Keep the older attribute names as compatibility fallbacks for future
-    # parser variants, but never substitute the short SEO description for the
-    # article body when the full review is available.
-    content = (
+
+    rendered_content = (
         _value(review, "rendered_html")
         or _value(review, "html_content")
         or _value(review, "content_html")
         or _value(review, "body_html")
     )
-
-    if not content:
-        content = f"<p>{description}</p>"
+    sections = _parse_review_sections(rendered_content)
+    experience = sections.experience or f"<p>{description}</p>"
+    verdict_copy = sections.verdict or f"<p>{description}</p>"
+    testing_copy = sections.did_i_forget or "<p>The verdict above is the answer.</p>"
+    emotion = _emotion_class(raw_verdict)
 
     structured_data = {
         "@context": "https://schema.org",
         "@type": "Review",
-        "name": title,
-        "description": description,
+        "name": html.unescape(title),
+        "description": html.unescape(description),
         "url": canonical,
         "author": {"@type": "Person", "name": "smol-eggo"},
-        "itemReviewed": {"@type": "VideoGame", "name": title},
+        "itemReviewed": {"@type": "VideoGame", "name": html.unescape(title)},
     }
 
     return f"""<!doctype html>
@@ -93,7 +200,7 @@ def review_page(
   <title>{title} review | {html.escape(SITE_NAME)}</title>
   <script type="application/ld+json">{json.dumps(structured_data, ensure_ascii=False)}</script>
 </head>
-<body>
+<body class="review-score-{emotion}">
   <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
 
   <header class="review-site-header">
@@ -124,17 +231,26 @@ def review_page(
         </dl>
       </section>
 
-      <div class="review-content">
-        {content}
-      </div>
+      <section class="review-experience" aria-labelledby="experience-title">
+        <p class="section-overline">The play session</p>
+        <h2 id="experience-title">Experience</h2>
+        <div class="review-content">{experience}</div>
+      </section>
 
-      <aside class="testing-answer">
-        {_eggo()}
-        <div>
+      <aside class="eggo-conclusion {emotion}" aria-label="Review conclusion">
+        <div class="eggo-stage">{_eggo(raw_verdict, "review-eggo-conclusion")}</div>
+
+        <section class="conclusion-verdict" aria-labelledby="written-verdict-title">
+          <p class="panel-kicker">smol-eggo’s verdict</p>
+          <h2 id="written-verdict-title"><span aria-hidden="true">{emoji}</span> {verdict}</h2>
+          <div class="conclusion-copy">{verdict_copy}</div>
+        </section>
+
+        <section class="conclusion-testing" aria-labelledby="testing-title">
           <p class="panel-kicker">The question behind every review</p>
-          <h2>Did I forget I was testing?</h2>
-          <p>The verdict above is the answer. Compatibility matters most when the hardware fades into the background.</p>
-        </div>
+          <h2 id="testing-title">Did I forget I was testing?</h2>
+          <div class="conclusion-copy">{testing_copy}</div>
+        </section>
       </aside>
 
       <nav class="review-navigation" aria-label="More reviews">
@@ -142,13 +258,6 @@ def review_page(
         {_navigation_card(next_review, "Next review", "next")}
       </nav>
     </article>
-
-    <aside class="home-rail">
-      {_eggo()}
-      <h2>You’re heading the right way.</h2>
-      <p>The homepage now contains the complete searchable journal.</p>
-      <a href="../../">Browse every review →</a>
-    </aside>
   </main>
 
   <footer class="review-footer">
@@ -156,7 +265,7 @@ def review_page(
     <nav aria-label="Footer links">
       <a href="../../feed.xml">RSS</a>
       <a href="../../sitemap.xml">Sitemap</a>
-      <a href="../../">Back to top</a>
+      <a href="../../">Browse the journal</a>
     </nav>
   </footer>
 
@@ -176,3 +285,24 @@ def review_page(
 </body>
 </html>"""
 
+
+def reviews_index(reviews: list[GameReview]) -> str:
+    """Compatibility shim retained for older imports.
+
+    The generator now writes its own redirect for /reviews/, so this function
+    should not normally be called.
+    """
+    del reviews
+    return """<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url=../">
+  <link rel="canonical" href="../">
+  <title>Back to the RP6 Game Journal</title>
+</head>
+<body>
+  <p><a href="../">Continue to the RP6 Game Journal</a></p>
+</body>
+</html>"""
