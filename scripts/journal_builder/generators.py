@@ -32,40 +32,61 @@ def write_text(path: Path, content: str) -> None:
 
 
 COVER_EXTENSIONS = (".webp", ".avif", ".png", ".jpg", ".jpeg")
-SOURCE_COVERS_DIR = DOCS_DIR.parent / "assets" / "covers"
+REPOSITORY_ROOT = GAMES_DIR.parent
+SOURCE_COVERS_DIR = REPOSITORY_ROOT / "assets" / "covers"
 PUBLIC_COVERS_DIR = DOCS_DIR / "assets" / "covers"
 
 
-def sync_covers() -> None:
-    """Copy optional source covers into the published GitHub Pages folder.
+def sync_covers() -> int:
+    """Copy source covers into the folder published by GitHub Pages.
 
-    Add artwork as assets/covers/<review-slug>.<extension>. Existing files in
-    docs/assets/covers are also supported, so the feature remains friendly to
-    either repository layout.
+    Source artwork belongs in ``assets/covers`` at the repository root. The
+    generated website is served from ``docs``, so each supported image is
+    copied to ``docs/assets/covers`` before games.json and review pages are
+    generated.
     """
     PUBLIC_COVERS_DIR.mkdir(parents=True, exist_ok=True)
-    if not SOURCE_COVERS_DIR.exists():
-        return
 
-    for source in SOURCE_COVERS_DIR.iterdir():
-        if source.is_file() and source.suffix.casefold() in COVER_EXTENSIONS:
-            shutil.copy2(source, PUBLIC_COVERS_DIR / source.name)
+    if not SOURCE_COVERS_DIR.exists():
+        print(f"No source cover folder found at {SOURCE_COVERS_DIR}")
+        return 0
+
+    copied = 0
+    for source in sorted(SOURCE_COVERS_DIR.iterdir()):
+        if not source.is_file():
+            continue
+        if source.suffix.casefold() not in COVER_EXTENSIONS:
+            continue
+
+        destination = PUBLIC_COVERS_DIR / source.name
+        shutil.copy2(source, destination)
+        copied += 1
+
+    print(
+        f"Copied {copied} cover image(s) from "
+        f"{SOURCE_COVERS_DIR} to {PUBLIC_COVERS_DIR}."
+    )
+    return copied
 
 
 def cover_url_for(review: GameReview) -> str:
+    """Return the published relative URL for a matching review cover."""
     for extension in COVER_EXTENSIONS:
-        candidate = PUBLIC_COVERS_DIR / f"{review.slug}{extension}"
-        if candidate.exists():
-            return f"assets/covers/{review.slug}{extension}"
+        filename = f"{review.slug}{extension}"
+        if (PUBLIC_COVERS_DIR / filename).is_file():
+            return f"assets/covers/{filename}"
     return ""
 
 
 def generate_games_json(reviews: list[GameReview]) -> None:
     """Generate the homepage data while preserving the existing data contract."""
     games = []
+    matched_covers = 0
     for review in reviews:
         encoded_filename = quote(review.source_filename)
         cover_url = cover_url_for(review)
+        if cover_url:
+            matched_covers += 1
         games.append(
             {
                 "title": review.title,
@@ -81,6 +102,10 @@ def generate_games_json(reviews: list[GameReview]) -> None:
         )
 
     write_text(GAMES_JSON, json.dumps(games, ensure_ascii=False, indent=2))
+    print(
+        f"Added coverUrl values for {matched_covers} of {len(reviews)} "
+        "review(s) in games.json."
+    )
 
 
 def reviews_redirect() -> str:
@@ -221,3 +246,5 @@ def build_site() -> None:
         f"{len(reviews)} review pages, homepage data, /reviews/ redirect, "
         "sitemap.xml, feed.xml, and robots.txt."
     )
+
+
