@@ -135,3 +135,10 @@ h1 { margin: .45rem 0 1rem; font-size: clamp(2.8rem, 8vw, 5.8rem); line-height: 
 }
 .featured-cover-image[hidden],
 .featured-device-image[hidden] { display: none; }
+
+
+.rss-link{gap:.45rem;}
+.hero-rss{margin-top:1rem;color:var(--muted);font-size:.92rem;}
+.hero-rss a{color:#ffb86b;text-decoration:none;font-weight:700;}
+.hero-rss a:hover{text-decoration:underline;}
+
