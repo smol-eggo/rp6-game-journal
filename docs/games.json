@@ -1,5 +1,15 @@
 [
   {
+    "title": "7 Days to Die",
+    "verdict": "Leave at Home",
+    "emoji": "🚧",
+    "store": "Steam",
+    "compatibilityLayer": "Proton",
+    "date": "July 2026",
+    "url": "https://github.com/smol-eggo/rp6-game-journal/blob/main/games/7-days-to-die.md",
+    "reviewUrl": "reviews/7-days-to-die/"
+  },
+  {
     "title": "Alice: Madness Returns",
     "verdict": "Lost Track of Time",
     "emoji": "🍇",

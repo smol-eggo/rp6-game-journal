@@ -5,7 +5,14 @@
     <link>https://smol-eggo.github.io/rp6-game-journal/</link>
     <description>Personal game reviews, handheld impressions, and Retroid Pocket 6 compatibility notes.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 23 Jul 2026 16:52:38 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2026 17:03:15 +0000</lastBuildDate>
+    <item>
+      <title>7 Days to Die</title>
+      <link>https://smol-eggo.github.io/rp6-game-journal/reviews/7-days-to-die/</link>
+      <guid isPermaLink="true">https://smol-eggo.github.io/rp6-game-journal/reviews/7-days-to-die/</guid>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
+      <description>Until Easy Anti Cheat support changes, this one is staying on my desktop.</description>
+    </item>
     <item>
       <title>Rogue Legacy 2</title>
       <link>https://smol-eggo.github.io/rp6-game-journal/reviews/rogue-legacy-2/</link>
@@ -138,13 +145,6 @@
       <guid isPermaLink="true">https://smol-eggo.github.io/rp6-game-journal/reviews/final-fantasy-x-hd/</guid>
       <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
       <description>One of those games that simply belongs on a handheld.</description>
-    </item>
-    <item>
-      <title>Final Fantasy XIII</title>
-      <link>https://smol-eggo.github.io/rp6-game-journal/reviews/final-fantasy-xiii/</link>
-      <guid isPermaLink="true">https://smol-eggo.github.io/rp6-game-journal/reviews/final-fantasy-xiii/</guid>
-      <pubDate>Mon, 20 Jul 2026 00:00:00 +0000</pubDate>
-      <description>Sometimes compatibility testing is very short. This was one of those times.</description>
     </item>
   </channel>
 </rss>
